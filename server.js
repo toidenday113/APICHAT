@@ -1,8 +1,9 @@
-const BASE_URL = 'mongodb://localhost:27020/DataChat?replSet=rs1';
+//const BASE_URL = 'mongodb://localhost:27020/DataChat?replSet=rs1';
+const BASE_URL = 'mongodb://localhost:27022/AppChat?replSet=rsapp';
 const express = require('express');
 const app = express();
 const server = require('http').createServer(app);
-const PORT = 3000 || process.env.port;
+const PORT = 3000;
 
 /*=============*/
 const Passport = require('passport');
@@ -11,39 +12,41 @@ const BodyParser = require('body-parser');
 const session = require('express-session');
 const flash = require('connect-flash');
 const cookieParser = require('cookie-parser');
+const fileupload = require('express-fileupload');
 
 // Connection mongodb
 mongoose.connect(
-	BASE_URL,
-	{ useNewUrlParser: true, useUnifiedTopology: true },
-	err => {
-		if (err) throw err;
-		console.log('Connection mongodb success');
-	}
+  BASE_URL,
+  { useNewUrlParser: true, useUnifiedTopology: true },
+  function (err) {
+    if (err) throw err;
+    console.log('Connection mongodb success');
+  }
 );
 
 // Use
+app.use(express.static('public'));
 app.use(cookieParser());
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({ extended: true }));
-app.use(express.static('public'));
 app.use(
-	session({
-		secret: 'dev',
-		resave: true,
-		saveUninitialized: true,
-	})
+  session({
+    secret: 'dev',
+    resave: true,
+    saveUninitialized: true,
+  })
 );
 app.use(Passport.initialize());
 app.use(Passport.session());
 app.use(flash());
-
+app.use(fileupload());
 console.clear();
+
 // Config
 require('./Config/ConfigPassport')(Passport);
 require('./Routers/RouterUser')(app, Passport);
 
 // run server
-server.listen(PORT, () => {
-	console.log('Server running - Port: ' + server.address().port);
+server.listen(PORT, function () {
+  console.log('Server running - Port: ' + server.address().port);
 });
