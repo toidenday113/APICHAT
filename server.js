@@ -2,6 +2,7 @@
 const BASE_URL = 'mongodb://localhost:27022/AppChat?replSet=rsapp';
 const express = require('express');
 const app = express();
+app.use(express.static('public'));
 const server = require('http').createServer(app);
 const PORT = 3000;
 
@@ -25,7 +26,7 @@ mongoose.connect(
 );
 
 // Use
-app.use(express.static('public'));
+
 app.use(cookieParser());
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({ extended: true }));
@@ -40,6 +41,7 @@ app.use(Passport.initialize());
 app.use(Passport.session());
 app.use(flash());
 app.use(fileupload());
+
 console.clear();
 
 // Config

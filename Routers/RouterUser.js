@@ -27,7 +27,7 @@ module.exports = (app, passport) => {
   //Router Logout
   app.post('/logout', (req, res) => {
     req.logout();
-    res.end('Logged out');
+    res.json({message:"logout"});
   });
 };
 

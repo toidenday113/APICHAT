@@ -29,8 +29,8 @@ module.exports.create = function (req, res) {
         if (email) {
           return res.json({ message: 'Email already exists' });
         } else {
-          var pathFile = "public/images/"+ randomValueBase64(12)+".png";
-          fs.writeFile(pathFile, req.files.avatar.data, function(err){
+          var pathFile = "/images/"+ randomValueBase64(12)+".png";
+          fs.writeFile("public"+pathFile, req.files.avatar.data, function(err){
               if(err) pathFile ="";
           });
 
@@ -68,20 +68,21 @@ module.exports.login = (req, res, next) => {
     }
     if (!user) {
       return res
-        .status(400)
-        .json({ SERVER_RESPONSE: 0, SERVER_MESSAGE: 'Wrong Credentials' });
+        .json({_id: "", SERVER_MESSAGE: 'Wrong Credentials' });
     }
 
     req.logIn(user, err => {
       if (err) {
         return res.next(err);
       } else {
-        return res.json({
-          SERVER_RESPONSE: 1,
-          SERVER_MESSAGE: 'Login success',
-        });
-        console.log('thanhf cong');
+        user = user.toObject();
+        delete user.password;
+        delete user.__v;
+        
+        console.log(user);
+        return res.end(JSON.stringify(user));
       }
+      
     });
   })(req, res, next);
   console.log('login: ' + JSON.stringify(req.body));

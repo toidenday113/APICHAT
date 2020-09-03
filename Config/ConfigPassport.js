@@ -24,6 +24,7 @@ module.exports = function (passport) {
 					return done(null, false, { message: 'Incorrect username.' });
 				}
 				if (!user.validPassword(password)) {
+					console.log("{ message: 'Incorrect password.' }");
 					return done(null, false, { message: 'Incorrect password.' });
 				}
 				return done(null, user);
