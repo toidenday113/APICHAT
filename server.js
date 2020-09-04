@@ -45,8 +45,13 @@ app.use(fileupload());
 console.clear();
 
 // Config
-require('./Config/ConfigPassport')(Passport);
-require('./Routers/RouterUser')(app, Passport);
+try {
+  require('./Config/ConfigPassport')(Passport);
+  require('./Routers/RouterUser')(app, Passport);
+} catch (error) {
+  console.log("Server log: error");
+}
+
 
 // run server
 server.listen(PORT, function () {
