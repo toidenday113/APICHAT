@@ -15,6 +15,28 @@ function randomValueBase64(len) {
     .replace(/\[/g, '1')
     .replace(/\]/g, '1');
 }
+
+function createFileImage(req){
+  
+  if(req.body.avatarOld){
+    fs.exists("public"+req.body.avatarOld, function(exists){
+      if(exists){
+        fs.unlink("public"+req.body.avatarOld, function(err){
+          
+        });
+      }
+    });
+  }
+
+  var pathFile = '/images/' + randomValueBase64(12) + '.png';
+  fs.writeFile('public' + pathFile, req.files.avatar.data, function (err) {
+    if (err) 
+    {
+      pathFile = '';
+    }
+  });
+  return pathFile;
+}
 // User register
 module.exports.create = function (req, res) {
   if (!req.body.username || !req.body.email || !req.body.password) {
@@ -29,9 +51,11 @@ module.exports.create = function (req, res) {
         if (email) {
           return res.json({ message: 'Email already exists' });
         } else {
-          var pathFile = "/images/"+ randomValueBase64(12)+".png";
-          fs.writeFile("public"+pathFile, req.files.avatar.data, function(err){
-              if(err) pathFile ="";
+          var pathFile = '/images/' + randomValueBase64(12) + '.png';
+          fs.writeFile('public' + pathFile, req.files.avatar.data, function (
+            err
+          ) {
+            if (err) pathFile = '';
           });
 
           let nUser = new User();
@@ -67,8 +91,7 @@ module.exports.login = (req, res, next) => {
       return res.next(err);
     }
     if (!user) {
-      return res
-        .json({_id: "", SERVER_MESSAGE: 'Wrong Credentials' });
+      return res.json({ _id: '', SERVER_MESSAGE: 'Wrong Credentials' });
     }
 
     req.logIn(user, err => {
@@ -78,11 +101,10 @@ module.exports.login = (req, res, next) => {
         user = user.toObject();
         delete user.password;
         delete user.__v;
-        
+
         console.log(user);
         return res.end(JSON.stringify(user));
       }
-      
     });
   })(req, res, next);
   console.log('login: ' + JSON.stringify(req.body));
@@ -105,31 +127,35 @@ module.exports.me = (req, res) => {
 
 // User Update
 module.exports.update = (req, res) => {
-  User.findById(req.user.id, (err, user) => {
-    if (user) {
-      if (user.username != req.user.username) {
-        return res.status(400).end('Modifying other user');
+  try {
+    User.findById(req.user.id, (err, user) => {
+      if (user) {
+        if (user.username != req.user.username) {
+          return res.status(400).end('Modifying other user');
+        } else {
+          user.name = req.body.name ? req.body.name : user.name;
+          user.email = req.body.email ? req.body.email : user.email;
+          user.avatar = req.files.avatar ? createFileImage(req) : user.avatar;
+          user.status = req.body.status ? req.body.status : user.status;
+          user.username = req.body.username ? req.body.username : user.username;
+          user.password = req.body.password
+            ? user.generateHash(req.body.password)
+            : user.password;
+
+          user.save();
+          console.log("update");
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          user = user.toObject();
+          delete user.password;
+          res.end(JSON.stringify(user));
+        }
       } else {
-        user.name = req.body.name ? req.body.name : user.name;
-        user.email = req.body.email ? req.body.email : user.email;
-        user.avatar = req.body.avatar ? req.body.avatar : user.avatar;
-        user.status = req.body.status ? req.body.status : user.status;
-        user.username = req.body.username ? req.body.username : user.username;
-        user.password = req.body.password
-          ? user.generateHash(req.body.password)
-          : user.password;
-
-        user.save();
-
-        res.writeHead(200, { 'Content-Type': 'application/json' });
-        user = user.toObject();
-        delete user.password;
-        res.end(JSON.stringify(user));
+        return res.status(400).end('User not found');
       }
-    } else {
-      return res.status(400).end('User not found');
-    }
-  });
+    });
+  } catch (error) {
+    //errorlog.error(`Error Update Profile: ${error}`);
+  }
 };
 
 // Delete user

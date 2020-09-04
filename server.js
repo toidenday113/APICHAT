@@ -45,11 +45,11 @@ app.use(fileupload());
 console.clear();
 
 // Config
-try {
+try{
   require('./Config/ConfigPassport')(Passport);
   require('./Routers/RouterUser')(app, Passport);
-} catch (error) {
-  console.log("Server log: error");
+}catch(error){
+  console.log(`Server error: ${error}`);
 }
 
 
