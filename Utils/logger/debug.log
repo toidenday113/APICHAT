@@ -1,0 +1,40 @@
+[05-09-2020 12:47:13] [[32minfo[39m] Update profile success
+[05-09-2020 12:50:08] [[32minfo[39m] Update profile success
+[05-09-2020 12:51:24] [[32minfo[39m] 
+[05-09-2020 12:51:29] [[32minfo[39m] test infor
+[05-09-2020 12:51:46] [[32minfo[39m] test infor
+[05-09-2020 12:51:51] [[32minfo[39m] test infor
+[05-09-2020 12:51:51] [[31merror[39m] Error
+[05-09-2020 12:51:56] [[32minfo[39m] test infor
+[05-09-2020 12:51:56] [[31merror[39m] Error
+[05-09-2020 12:52:11] [[32minfo[39m] test infor
+[05-09-2020 12:52:11] [[31merror[39m] err
+[05-09-2020 12:52:13] [[32minfo[39m] test infor
+[05-09-2020 12:52:13] [[31merror[39m] error log
+[05-09-2020 12:53:42] [[32minfo[39m] test infor
+[05-09-2020 12:53:42] [[31merror[39m] Error: error log
+    at Object.<anonymous> (D:\Lab_LapTrinh\NodeJs\APICHAT\server.js:56:14)
+    at Module._compile (internal/modules/cjs/loader.js:1123:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
+    at Module.load (internal/modules/cjs/loader.js:972:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:872:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
+    at internal/main/run_main_module.js:17:47
+[05-09-2020 12:54:37] [[32minfo[39m] test infor
+[05-09-2020 12:54:37] [[31merror[39m] Error: error log
+    at Object.<anonymous> (D:\Lab_LapTrinh\NodeJs\APICHAT\server.js:56:14)
+    at Module._compile (internal/modules/cjs/loader.js:1123:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
+    at Module.load (internal/modules/cjs/loader.js:972:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:872:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
+    at internal/main/run_main_module.js:17:47
+[05-09-2020 12:57:39] [[32minfo[39m] test infor
+[05-09-2020 12:57:39] [[31merror[39m] Error: error log
+    at Object.<anonymous> (D:\Lab_LapTrinh\NodeJs\APICHAT\server.js:56:14)
+    at Module._compile (internal/modules/cjs/loader.js:1123:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
+    at Module.load (internal/modules/cjs/loader.js:972:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:872:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
+    at internal/main/run_main_module.js:17:47

@@ -1,0 +1,65 @@
+[05-09-2020 12:55:24] [[32minfo[39m] test infor
+[05-09-2020 12:55:24] [[31merror[39m] Error: error log
+    at Object.<anonymous> (D:\Lab_LapTrinh\NodeJs\APICHAT\server.js:56:14)
+    at Module._compile (internal/modules/cjs/loader.js:1123:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
+    at Module.load (internal/modules/cjs/loader.js:972:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:872:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
+    at internal/main/run_main_module.js:17:47
+[05-09-2020 12:58:26] [[32minfo[39m] test infor
+[05-09-2020 12:58:26] [[31merror[39m] Error: error log
+    at Object.<anonymous> (D:\Lab_LapTrinh\NodeJs\APICHAT\server.js:56:14)
+    at Module._compile (internal/modules/cjs/loader.js:1123:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
+    at Module.load (internal/modules/cjs/loader.js:972:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:872:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
+    at internal/main/run_main_module.js:17:47
+[05-09-2020 13:02:47] [[32minfo[39m] test infor
+[05-09-2020 13:02:47] [[31merror[39m] Error: error log
+    at Object.<anonymous> (D:\Lab_LapTrinh\NodeJs\APICHAT\server.js:56:14)
+    at Module._compile (internal/modules/cjs/loader.js:1123:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
+    at Module.load (internal/modules/cjs/loader.js:972:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:872:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
+    at internal/main/run_main_module.js:17:47
+[05-09-2020 13:06:22] [[32minfo[39m] test infor
+[05-09-2020 13:06:22] [[31merror[39m] Error: error log
+    at Object.<anonymous> (D:\Lab_LapTrinh\NodeJs\APICHAT\server.js:56:14)
+    at Module._compile (internal/modules/cjs/loader.js:1123:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
+    at Module.load (internal/modules/cjs/loader.js:972:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:872:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
+    at internal/main/run_main_module.js:17:47
+[05-09-2020 13:06:39] [[32minfo[39m] test infor
+[05-09-2020 13:06:39] [[31merror[39m] Error: error log
+    at Object.<anonymous> (D:\Lab_LapTrinh\NodeJs\APICHAT\server.js:56:14)
+    at Module._compile (internal/modules/cjs/loader.js:1123:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
+    at Module.load (internal/modules/cjs/loader.js:972:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:872:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
+    at internal/main/run_main_module.js:17:47
+undefined
+undefined
+[05-09-2020 13:08:04] [[32minfo[39m] test infor
+[05-09-2020 13:08:04] [[31merror[39m] Error: error log
+    at Object.<anonymous> (D:\Lab_LapTrinh\NodeJs\APICHAT\server.js:56:14)
+    at Module._compile (internal/modules/cjs/loader.js:1123:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
+    at Module.load (internal/modules/cjs/loader.js:972:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:872:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
+    at internal/main/run_main_module.js:17:47
+[05-09-2020 13:08:32] [[32minfo[39m] test infor
+[05-09-2020 13:08:32] [[31merror[39m] Error: error log
+    at Object.<anonymous> (D:\Lab_LapTrinh\NodeJs\APICHAT\server.js:56:14)
+    at Module._compile (internal/modules/cjs/loader.js:1123:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
+    at Module.load (internal/modules/cjs/loader.js:972:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:872:14)
+    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
+    at internal/main/run_main_module.js:17:47

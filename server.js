@@ -14,6 +14,7 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const cookieParser = require('cookie-parser');
 const fileupload = require('express-fileupload');
+const logger = require('./Utils/logger');
 
 // Connection mongodb
 mongoose.connect(

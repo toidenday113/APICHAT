@@ -2,6 +2,7 @@ const User = require('../Models/User');
 const passport = require('passport');
 const fs = require('fs');
 const crypto = require('crypto');
+const logger = require('../Utils/logger');
 
 module.exports = {};
 
@@ -22,7 +23,7 @@ function createFileImage(req){
     fs.exists("public"+req.body.avatarOld, function(exists){
       if(exists){
         fs.unlink("public"+req.body.avatarOld, function(err){
-          
+
         });
       }
     });
@@ -143,18 +144,19 @@ module.exports.update = (req, res) => {
             : user.password;
 
           user.save();
-          console.log("update");
+          logger.info(`Update profile success`);
           res.writeHead(200, { 'Content-Type': 'application/json' });
           user = user.toObject();
           delete user.password;
           res.end(JSON.stringify(user));
+
         }
       } else {
         return res.status(400).end('User not found');
       }
     });
   } catch (error) {
-    //errorlog.error(`Error Update Profile: ${error}`);
+    logger.error(`Update profile ${error}`);
   }
 };
 
