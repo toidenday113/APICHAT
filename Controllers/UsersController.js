@@ -175,3 +175,22 @@ module.exports.listUser = function (req, res) {
     }
   });
 };
+// Update password;
+module.exports.updatePassword = function (req, res) {
+  try {
+    
+    User.findOne({_id:req.user.id,}, (err, user) => {
+      
+          if(user.generateHash(req.body.password) == user.password){
+              console.log("password giong nhau");
+          }else{
+            console.log("password khac nhau");
+          }          
+          res.end(JSON.stringify(user));
+    });
+
+  } catch (error) {
+    logger.error(`TryCatch updatePassword file UsersController.js`);
+  }
+
+}

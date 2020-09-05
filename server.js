@@ -4,6 +4,7 @@ const express = require('express');
 const app = express();
 app.use(express.static('public'));
 const server = require('http').createServer(app);
+const io  = require("socket.io")(server);
 const PORT = 3000;
 
 /*=============*/
@@ -49,8 +50,9 @@ console.clear();
 try{
   require('./Config/ConfigPassport')(Passport);
   require('./Routers/RouterUser')(app, Passport);
+  require('./ConfigSocketIO/ConfigSocket')(io);
 }catch(error){
-  console.log(`Server error: ${error}`);
+  logger.error(`TryCatch file server.js: ${error}`);
 }
 
 
