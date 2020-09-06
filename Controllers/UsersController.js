@@ -180,12 +180,21 @@ module.exports.updatePassword = function (req, res) {
   try {
     
     User.findOne({_id:req.user.id,}, (err, user) => {
-      
-          if(user.generateHash(req.body.password) == user.password){
-              console.log("password giong nhau");
+
+          if(user.validPassword(req.body.passwordOld)){
+
+            user.name =  user.name;
+            user.email = user.email;
+            user.avatar = user.avatar;
+            user.status = user.status;
+            user.username = user.username;
+            user.password = user.generateHash(req.body.passwordNew);
+            user.save();
+            res.json({validate: 1, message:"success"});
+            
           }else{
-            console.log("password khac nhau");
-          }          
+            res.json({validate: 0, message:"Password not Right"});
+          }
           res.end(JSON.stringify(user));
     });
 

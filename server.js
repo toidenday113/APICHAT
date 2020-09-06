@@ -1,10 +1,10 @@
-//const BASE_URL = 'mongodb://localhost:27020/DataChat?replSet=rs1';
-const BASE_URL = 'mongodb://localhost:27022/AppChat?replSet=rsapp';
+const BASE_URL = 'mongodb://localhost:27020/DataChat?replSet=rs1';
+//const BASE_URL = 'mongodb://localhost:27022/AppChat?replSet=rsapp';
 const express = require('express');
 const app = express();
 app.use(express.static('public'));
 const server = require('http').createServer(app);
-const io  = require("socket.io")(server);
+const io = require('socket.io')(server);
 const PORT = 3000;
 
 /*=============*/
@@ -19,12 +19,12 @@ const logger = require('./Utils/logger');
 
 // Connection mongodb
 mongoose.connect(
-  BASE_URL,
-  { useNewUrlParser: true, useUnifiedTopology: true },
-  function (err) {
-    if (err) throw err;
-    console.log('Connection mongodb success');
-  }
+	BASE_URL,
+	{ useNewUrlParser: true, useUnifiedTopology: true },
+	function (err) {
+		if (err) throw err;
+		console.log('Connection mongodb success');
+	}
 );
 
 // Use
@@ -33,11 +33,11 @@ app.use(cookieParser());
 app.use(BodyParser.json());
 app.use(BodyParser.urlencoded({ extended: true }));
 app.use(
-  session({
-    secret: 'dev',
-    resave: true,
-    saveUninitialized: true,
-  })
+	session({
+		secret: 'dev',
+		resave: true,
+		saveUninitialized: true,
+	})
 );
 app.use(Passport.initialize());
 app.use(Passport.session());
@@ -47,16 +47,15 @@ app.use(fileupload());
 console.clear();
 
 // Config
-try{
-  require('./Config/ConfigPassport')(Passport);
-  require('./Routers/RouterUser')(app, Passport);
-  require('./ConfigSocketIO/ConfigSocket')(io);
-}catch(error){
-  logger.error(`TryCatch file server.js: ${error}`);
+try {
+	require('./Config/ConfigPassport')(Passport);
+	require('./Routers/RouterUser')(app, Passport);
+	require('./ConfigSocketIO/ConfigSocket')(io);
+} catch (error) {
+	logger.error(`TryCatch file server.js: ${error}`);
 }
-
 
 // run server
 server.listen(PORT, function () {
-  console.log('Server running - Port: ' + server.address().port);
+	console.log('Server running - Port: ' + server.address().port);
 });

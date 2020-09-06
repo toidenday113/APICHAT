@@ -23,3 +23,11 @@ undefined
     at Function.Module._load (internal/modules/cjs/loader.js:872:14)
     at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
     at internal/main/run_main_module.js:17:47
+[06-09-2020 15:58:09] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected identifier
+[06-09-2020 15:58:12] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected identifier
+[06-09-2020 15:58:15] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '{'
+[06-09-2020 15:58:22] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '=='
+[06-09-2020 16:03:12] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[06-09-2020 16:03:41] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[06-09-2020 16:04:22] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[06-09-2020 16:10:27] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ':'
