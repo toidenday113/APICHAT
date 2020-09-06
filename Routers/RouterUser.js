@@ -26,6 +26,8 @@ module.exports = (app, passport) => {
 
   app.post('/user/update/password', isLoggedIn, ControllerUser.updatePassword);
 
+  app.post('/user/validateEmail', ControllerUser.validateEmail);
+
   //Router Logout
   app.post('/logout', (req, res) => {
     req.logout();

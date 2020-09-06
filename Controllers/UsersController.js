@@ -3,6 +3,7 @@ const passport = require('passport');
 const fs = require('fs');
 const crypto = require('crypto');
 const logger = require('../Utils/logger');
+const email = require('../ConfigEmail/ConfigSendEmail');
 
 module.exports = {};
 
@@ -17,22 +18,18 @@ function randomValueBase64(len) {
     .replace(/\]/g, '1');
 }
 
-function createFileImage(req){
-  
-  if(req.body.avatarOld){
-    fs.exists("public"+req.body.avatarOld, function(exists){
-      if(exists){
-        fs.unlink("public"+req.body.avatarOld, function(err){
-
-        });
+function createFileImage(req) {
+  if (req.body.avatarOld) {
+    fs.exists('public' + req.body.avatarOld, function (exists) {
+      if (exists) {
+        fs.unlink('public' + req.body.avatarOld, function (err) {});
       }
     });
   }
 
   var pathFile = '/images/' + randomValueBase64(12) + '.png';
   fs.writeFile('public' + pathFile, req.files.avatar.data, function (err) {
-    if (err) 
-    {
+    if (err) {
       pathFile = '';
     }
   });
@@ -149,7 +146,6 @@ module.exports.update = (req, res) => {
           user = user.toObject();
           delete user.password;
           res.end(JSON.stringify(user));
-
         }
       } else {
         return res.status(400).end('User not found');
@@ -178,28 +174,36 @@ module.exports.listUser = function (req, res) {
 // Update password;
 module.exports.updatePassword = function (req, res) {
   try {
-    
-    User.findOne({_id:req.user.id,}, (err, user) => {
-
-          if(user.validPassword(req.body.passwordOld)){
-
-            user.name =  user.name;
-            user.email = user.email;
-            user.avatar = user.avatar;
-            user.status = user.status;
-            user.username = user.username;
-            user.password = user.generateHash(req.body.passwordNew);
-            user.save();
-            res.json({validate: 1, message:"success"});
-            
-          }else{
-            res.json({validate: 0, message:"Password not Right"});
-          }
-          res.end(JSON.stringify(user));
+    User.findOne({ _id: req.user.id }, (err, user) => {
+      if (user.validPassword(req.body.passwordOld)) {
+        user.name = user.name;
+        user.email = user.email;
+        user.avatar = user.avatar;
+        user.status = user.status;
+        user.username = user.username;
+        user.password = user.generateHash(req.body.passwordNew);
+        user.save();
+        res.json({ validate: 1, message: 'success' });
+      } else {
+        res.json({ validate: 0, message: 'Password not Right' });
+      }
+      res.end(JSON.stringify(user));
     });
-
   } catch (error) {
     logger.error(`TryCatch updatePassword file UsersController.js`);
   }
+};
 
-}
+module.exports.validateEmail = function (req, res) {
+  try {
+    User.findOne({ email: req.body.Email }, (err, user) => {
+      if (!user) {
+        res.json({ validateEmail: 0 });
+      } else {
+        email.SendCode(req.body.Email, req.body.code);
+        res.json({ validateEmail: 1 });
+        
+      }
+    });
+  } catch (error) {}
+};
