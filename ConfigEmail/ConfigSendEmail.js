@@ -14,7 +14,7 @@ let transporter = nodemailer.createTransport({
     transporter.sendMail({
         from: "Dev Chat", // sender address
         to: email, // list of receivers
-        subject: "Code validate reset password", // Subject line
+        subject: "Code validate reset password: `DevChat`", // Subject line
         html: "<p>Here is the code to enter into the application</p><b>"+code+"</b>", // html body
       });
   } 
