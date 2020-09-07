@@ -213,6 +213,7 @@ module.exports.resetPassword = function (req, res) {
 			if (user) {
 				user.password = user.generateHash(req.body.passNew);
 				user.save();
+				res.json({resetPass: 1,message:"Password recovery is successful" });
 			}
 		});
 	} catch (error) {
