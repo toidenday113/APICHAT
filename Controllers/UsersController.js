@@ -4,7 +4,6 @@ const fs = require('fs');
 const crypto = require('crypto');
 const logger = require('../Utils/logger');
 const email = require('../ConfigEmail/ConfigSendEmail');
-const { use } = require('passport');
 
 module.exports = {};
 
@@ -236,4 +235,24 @@ module.exports.updateName = function (req, res) {
 	} catch (error) {
 		
 	}
+}
+module.exports.updateStatus = function(req, res){
+    try {
+      
+      User.findById(req.user.id, (err, user)=>{
+
+        if(user){
+          user.status = req.body.status ? req.body.status : "offline";
+          user.save();
+          user = user.toObject();
+          delete user.password;
+          delete user.__v;
+          res.end(JSON.stringify(user));
+        }
+      
+      });
+
+    } catch (error) {
+      
+    }
 }

@@ -26,7 +26,7 @@ module.exports = (app, passport) => {
 
   app.post('/user/update/password', isLoggedIn, ControllerUser.updatePassword);
   app.post('/user/update/name', isLoggedIn, ControllerUser.updateName);
-
+  app.post('/user/status',isLoggedIn, ControllerUser.updateStatus)
   app.post('/user/validateEmail', ControllerUser.validateEmail);
   app.post('/user/resetPass', ControllerUser.resetPassword);
 

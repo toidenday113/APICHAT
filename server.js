@@ -1,5 +1,5 @@
-//const BASE_URL = 'mongodb://localhost:27020/DataChat?replSet=rs1';
-const BASE_URL = 'mongodb://localhost:27022/AppChat?replSet=rsapp';
+const BASE_URL = 'mongodb://localhost:27020/DataChat?replSet=rs1';
+//const BASE_URL = 'mongodb://localhost:27022/AppChat?replSet=rsapp';
 const express = require('express');
 const app = express();
 app.use(express.static('public'));
@@ -50,6 +50,7 @@ console.clear();
 try {
 	require('./Config/ConfigPassport')(Passport);
 	require('./Routers/RouterUser')(app, Passport);
+	require('./Routers/RouterChat')(app, Passport);
 	require('./ConfigSocketIO/ConfigSocket')(io);
 } catch (error) {
 	logger.error(`TryCatch file server.js: ${error}`);
