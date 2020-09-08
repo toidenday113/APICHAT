@@ -45,3 +45,37 @@ undefined
 [07-09-2020 10:25:26] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
 [07-09-2020 10:25:29] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
 [07-09-2020 10:26:39] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
+[07-09-2020 21:31:21] [[31merror[39m] TryCatch file server.js: ReferenceError: mo is not defined
+[07-09-2020 21:31:25] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
+[07-09-2020 21:34:30] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:34:32] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:34:36] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:34:38] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:35:32] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:37:00] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[07-09-2020 21:37:03] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[07-09-2020 21:37:14] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:37:18] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:37:31] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:37:33] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:39:41] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:39:43] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:39:54] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:39:57] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:40:00] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:40:03] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[07-09-2020 21:40:11] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:40:33] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:40:34] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:40:39] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:40:43] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:40:51] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:40:53] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:41:07] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:41:10] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:43:12] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:43:23] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:43:28] [[31merror[39m] TryCatch file server.js: Error: Route.post() requires a callback function but got a [object Undefined]
+[07-09-2020 21:43:39] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:43:55] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[07-09-2020 21:44:02] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
