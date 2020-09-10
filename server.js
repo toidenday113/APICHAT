@@ -1,5 +1,5 @@
-//const BASE_URL = 'mongodb://localhost:27020/DataChat?replSet=rs1';
-const BASE_URL = 'mongodb://localhost:27022/AppChat?replSet=rsapp';
+const BASE_URL = 'mongodb://localhost:27020/DataChat?replSet=rs1';
+//const BASE_URL = 'mongodb://localhost:27022/AppChat?replSet=rsapp';
 const express = require('express');
 const app = express();
 app.use(express.static('public'));
@@ -17,7 +17,7 @@ const cookieParser = require('cookie-parser');
 const fileupload = require('express-fileupload');
 const logger = require('./Utils/logger');
 const admin = require("firebase-admin");
-const serviceAccount = require("./serviceAccountKey.json");
+const serviceAccount = require("./Config/serviceAccountKey.json");
 
 //Config Firebase Admin
 admin.initializeApp({
@@ -89,6 +89,15 @@ try {
     NotifyUserController.UpdateNotify
   );
   /** End NotificationUser */
+
+/** Group */
+const GroupController = require("./Controllers/GroupController")();
+app.post("/group/CreateGroup", isLoggedIn, GroupController.CreateGroup);
+app.post("/group/joinGroup", isLoggedIn, GroupController.JoinGroup);
+app.post("/group/list", isLoggedIn, GroupController.ListGroup);
+/**End Group */
+
+
 
 /**Add Token Notification */
 const UserTokenController = require("./Controllers/UserTokenController");

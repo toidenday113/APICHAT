@@ -1,281 +1,81 @@
-[05-09-2020 12:55:24] [[32minfo[39m] test infor
-[05-09-2020 12:55:24] [[31merror[39m] Error: error log
-    at Object.<anonymous> (D:\Lab_LapTrinh\NodeJs\APICHAT\server.js:56:14)
-    at Module._compile (internal/modules/cjs/loader.js:1123:30)
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
-    at Module.load (internal/modules/cjs/loader.js:972:32)
-    at Function.Module._load (internal/modules/cjs/loader.js:872:14)
-    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
-    at internal/main/run_main_module.js:17:47
-[05-09-2020 12:58:26] [[32minfo[39m] test infor
-[05-09-2020 12:58:26] [[31merror[39m] Error: error log
-    at Object.<anonymous> (D:\Lab_LapTrinh\NodeJs\APICHAT\server.js:56:14)
-    at Module._compile (internal/modules/cjs/loader.js:1123:30)
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
-    at Module.load (internal/modules/cjs/loader.js:972:32)
-    at Function.Module._load (internal/modules/cjs/loader.js:872:14)
-    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
-    at internal/main/run_main_module.js:17:47
-[05-09-2020 13:02:47] [[32minfo[39m] test infor
-[05-09-2020 13:02:47] [[31merror[39m] Error: error log
-    at Object.<anonymous> (D:\Lab_LapTrinh\NodeJs\APICHAT\server.js:56:14)
-    at Module._compile (internal/modules/cjs/loader.js:1123:30)
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
-    at Module.load (internal/modules/cjs/loader.js:972:32)
-    at Function.Module._load (internal/modules/cjs/loader.js:872:14)
-    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
-    at internal/main/run_main_module.js:17:47
-[05-09-2020 13:06:22] [[32minfo[39m] test infor
-[05-09-2020 13:06:22] [[31merror[39m] Error: error log
-    at Object.<anonymous> (D:\Lab_LapTrinh\NodeJs\APICHAT\server.js:56:14)
-    at Module._compile (internal/modules/cjs/loader.js:1123:30)
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
-    at Module.load (internal/modules/cjs/loader.js:972:32)
-    at Function.Module._load (internal/modules/cjs/loader.js:872:14)
-    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
-    at internal/main/run_main_module.js:17:47
-[05-09-2020 13:06:39] [[32minfo[39m] test infor
-[05-09-2020 13:06:39] [[31merror[39m] Error: error log
-    at Object.<anonymous> (D:\Lab_LapTrinh\NodeJs\APICHAT\server.js:56:14)
-    at Module._compile (internal/modules/cjs/loader.js:1123:30)
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
-    at Module.load (internal/modules/cjs/loader.js:972:32)
-    at Function.Module._load (internal/modules/cjs/loader.js:872:14)
-    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
-    at internal/main/run_main_module.js:17:47
-undefined
-undefined
-[05-09-2020 13:08:04] [[32minfo[39m] test infor
-[05-09-2020 13:08:04] [[31merror[39m] Error: error log
-    at Object.<anonymous> (D:\Lab_LapTrinh\NodeJs\APICHAT\server.js:56:14)
-    at Module._compile (internal/modules/cjs/loader.js:1123:30)
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
-    at Module.load (internal/modules/cjs/loader.js:972:32)
-    at Function.Module._load (internal/modules/cjs/loader.js:872:14)
-    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
-    at internal/main/run_main_module.js:17:47
-[05-09-2020 13:08:32] [[32minfo[39m] test infor
-[05-09-2020 13:08:32] [[31merror[39m] Error: error log
-    at Object.<anonymous> (D:\Lab_LapTrinh\NodeJs\APICHAT\server.js:56:14)
-    at Module._compile (internal/modules/cjs/loader.js:1123:30)
-    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1143:10)
-    at Module.load (internal/modules/cjs/loader.js:972:32)
-    at Function.Module._load (internal/modules/cjs/loader.js:872:14)
-    at Function.executeUserEntryPoint [as runMain] (internal/modules/run_main.js:71:12)
-    at internal/main/run_main_module.js:17:47
-[06-09-2020 15:58:09] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected identifier
-[06-09-2020 15:58:12] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected identifier
-[06-09-2020 15:58:15] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '{'
-[06-09-2020 15:58:22] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '=='
-[06-09-2020 16:03:12] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
-[06-09-2020 16:03:41] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
-[06-09-2020 16:04:22] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
-[06-09-2020 16:10:27] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ':'
-[07-09-2020 10:16:12] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
-[07-09-2020 10:16:30] [[31merror[39m] TryCatch file server.js: ReferenceError: fu is not defined
-[07-09-2020 10:16:34] [[31merror[39m] TryCatch file server.js: ReferenceError: fuc is not defined
-[07-09-2020 10:16:37] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
-[07-09-2020 10:16:41] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
-[07-09-2020 10:17:04] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
-[07-09-2020 10:17:58] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
-[07-09-2020 10:18:03] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
-[07-09-2020 10:18:25] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
-[07-09-2020 10:18:56] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
-[07-09-2020 10:19:02] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
-[07-09-2020 10:25:26] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
-[07-09-2020 10:25:29] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
-[07-09-2020 10:26:39] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
-[07-09-2020 21:31:21] [[31merror[39m] TryCatch file server.js: ReferenceError: mo is not defined
-[07-09-2020 21:31:25] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
-[07-09-2020 21:34:30] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:34:32] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:34:36] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:34:38] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:35:32] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:37:00] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
-[07-09-2020 21:37:03] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
-[07-09-2020 21:37:14] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:37:18] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:37:31] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:37:33] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:39:41] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:39:43] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:39:54] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:39:57] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:40:00] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:40:03] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
-[07-09-2020 21:40:11] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:40:33] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:40:34] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:40:39] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:40:43] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:40:51] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:40:53] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:41:07] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:41:10] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:43:12] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:43:23] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:43:28] [[31merror[39m] TryCatch file server.js: Error: Route.post() requires a callback function but got a [object Undefined]
-[07-09-2020 21:43:39] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:43:55] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[07-09-2020 21:44:02] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[08-09-2020 16:05:17] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
-[08-09-2020 18:39:24] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected identifier
-[08-09-2020 23:44:40] [[32minfo[39m] Update profile success
-[09-09-2020 01:00:28] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '.'
-[09-09-2020 01:00:46] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ';'
-[09-09-2020 01:00:54] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ';'
-[09-09-2020 14:25:56] [[31merror[39m] TryCatch file server.js: TypeError: Cannot read property 'body' of undefined
-[09-09-2020 14:26:05] [[31merror[39m] TryCatch file server.js: ReferenceError: re is not defined
-[09-09-2020 14:26:12] [[31merror[39m] TryCatch file server.js: ReferenceError: req is not defined
-[09-09-2020 14:34:31] [[31merror[39m] TryCatch file server.js: Error: Cannot find module 'soc'
-Require stack:
-- D:\Lab_LapTrinh\NodeJs\APICHAT\Controllers\ChatController.js
-- D:\Lab_LapTrinh\NodeJs\APICHAT\Routers\RouterChat.js
-- D:\Lab_LapTrinh\NodeJs\APICHAT\server.js
-[09-09-2020 14:41:57] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '.'
-[09-09-2020 14:42:11] [[31merror[39m] TryCatch file server.js: ReferenceError: mo is not defined
-[09-09-2020 14:42:19] [[31merror[39m] TryCatch file server.js: TypeError: Cannot read property 'exports' of undefined
-[09-09-2020 14:42:28] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected identifier
-[09-09-2020 14:42:51] [[31merror[39m] TryCatch file server.js: TypeError: Cannot read property 'post' of undefined
-[09-09-2020 14:44:26] [[31merror[39m] TryCatch file server.js: ReferenceError: let is not defined
-[09-09-2020 14:46:42] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '{'
-[09-09-2020 14:47:16] [[31merror[39m] TryCatch file server.js: TypeError: Cannot read property 'emit' of undefined
-[09-09-2020 14:47:22] [[31merror[39m] TryCatch file server.js: TypeError: Cannot read property 'emit' of undefined
-[09-09-2020 14:47:25] [[31merror[39m] TryCatch file server.js: TypeError: Cannot read property 'emit' of undefined
-[09-09-2020 14:49:22] [[31merror[39m] TryCatch file server.js: ReferenceError: ChatController is not defined
-[09-09-2020 14:49:32] [[31merror[39m] TryCatch file server.js: TypeError: require(...) is not a function
-[09-09-2020 14:49:36] [[31merror[39m] TryCatch file server.js: TypeError: require(...) is not a function
-[09-09-2020 14:52:18] [[31merror[39m] TryCatch file server.js: ReferenceError: ChatController is not defined
-[09-09-2020 14:52:20] [[31merror[39m] TryCatch file server.js: ReferenceError: io is not defined
-[09-09-2020 14:53:24] [[31merror[39m] TryCatch file server.js: ReferenceError: io is not defined
-[09-09-2020 14:53:36] [[31merror[39m] TryCatch file server.js: ReferenceError: io is not defined
-[09-09-2020 14:53:44] [[31merror[39m] TryCatch file server.js: ReferenceError: io is not defined
-[09-09-2020 14:53:47] [[31merror[39m] TryCatch file server.js: ReferenceError: io is not defined
-[09-09-2020 14:53:52] [[31merror[39m] TryCatch file server.js: ReferenceError: io is not defined
-[09-09-2020 14:54:03] [[31merror[39m] TryCatch file server.js: ReferenceError: io is not defined
-[09-09-2020 14:54:08] [[31merror[39m] TryCatch file server.js: ReferenceError: io is not defined
-[09-09-2020 14:54:12] [[31merror[39m] TryCatch file server.js: ReferenceError: io is not defined
-[09-09-2020 14:54:14] [[31merror[39m] TryCatch file server.js: ReferenceError: io is not defined
-[09-09-2020 14:54:16] [[31merror[39m] TryCatch file server.js: ReferenceError: io is not defined
-[09-09-2020 14:54:24] [[31merror[39m] TryCatch file server.js: ReferenceError: io is not defined
-[09-09-2020 14:54:28] [[31merror[39m] TryCatch file server.js: ReferenceError: io is not defined
-[09-09-2020 14:54:30] [[31merror[39m] TryCatch file server.js: ReferenceError: io is not defined
-[09-09-2020 14:54:32] [[31merror[39m] TryCatch file server.js: ReferenceError: io is not defined
-[09-09-2020 14:54:33] [[31merror[39m] TryCatch file server.js: ReferenceError: io is not defined
-[09-09-2020 14:54:38] [[31merror[39m] TryCatch file server.js: ReferenceError: io is not defined
-[09-09-2020 14:55:06] [[31merror[39m] TryCatch file server.js: ReferenceError: io is not defined
-[09-09-2020 14:55:07] [[31merror[39m] TryCatch file server.js: ReferenceError: io is not defined
-[09-09-2020 14:55:28] [[31merror[39m] TryCatch file server.js: ReferenceError: io is not defined
-[09-09-2020 14:55:33] [[31merror[39m] TryCatch file server.js: ReferenceError: io is not defined
-[09-09-2020 15:45:06] [[31merror[39m] TryCatch file server.js: ReferenceError: ConfigSocketIo is not defined
-[09-09-2020 15:45:53] [[31merror[39m] TryCatch file server.js: ReferenceError: ConfigSocketIo is not defined
-[09-09-2020 15:45:55] [[31merror[39m] TryCatch file server.js: ReferenceError: ConfigSocketIo is not defined
-[09-09-2020 15:46:27] [[31merror[39m] TryCatch file server.js: ReferenceError: ConfigSocketIo is not defined
-[09-09-2020 22:57:00] [[32minfo[39m] Login success: test002
-[09-09-2020 23:15:43] [[32minfo[39m] Login success: test002
-[09-09-2020 23:35:37] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected identifier
-[09-09-2020 23:35:40] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected identifier
-[10-09-2020 00:57:00] [[32minfo[39m] Login success: test002
-[10-09-2020 00:57:10] [[32minfo[39m] Login success: thkha001
-[10-09-2020 01:01:41] [[32minfo[39m] Login success: test002
-[10-09-2020 01:01:50] [[32minfo[39m] Login success: thkha001
-[10-09-2020 01:04:16] [[32minfo[39m] Login success: thkha001
-[10-09-2020 01:07:32] [[32minfo[39m] Login success: test002
-[10-09-2020 07:10:56] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 07:15:13] [[32minfo[39m] Login success: test002
-[10-09-2020 07:22:49] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 07:22:51] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
-[10-09-2020 07:22:55] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 07:22:58] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
-[10-09-2020 07:23:02] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
-[10-09-2020 07:23:05] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 07:23:12] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 07:23:26] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 07:24:24] [[32minfo[39m] Login success: test002
-[10-09-2020 07:28:27] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[10-09-2020 07:28:29] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 07:28:40] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 07:31:54] [[32minfo[39m] Login success: test002
-[10-09-2020 07:35:51] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
-[10-09-2020 07:36:12] [[32minfo[39m] Login success: test002
-[10-09-2020 07:36:41] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 07:37:43] [[32minfo[39m] Login success: test002
-[10-09-2020 07:39:51] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 07:41:02] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[10-09-2020 07:41:07] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[10-09-2020 07:41:17] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[10-09-2020 07:41:19] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
-[10-09-2020 07:41:25] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[10-09-2020 07:41:27] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[10-09-2020 07:41:33] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[10-09-2020 07:41:35] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 07:42:05] [[32minfo[39m] Login success: test002
-[10-09-2020 07:43:28] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
-[10-09-2020 07:43:31] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 07:43:48] [[32minfo[39m] Login success: test002
-[10-09-2020 07:45:39] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 07:45:44] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 07:45:52] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 07:45:55] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
-[10-09-2020 07:46:05] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 07:46:14] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 07:46:16] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 07:46:18] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
-[10-09-2020 07:46:28] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
-[10-09-2020 07:46:31] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
-[10-09-2020 07:46:33] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
-[10-09-2020 07:46:36] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
-[10-09-2020 07:46:41] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
-[10-09-2020 07:46:44] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 07:46:48] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 07:46:52] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 07:46:56] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 07:47:25] [[32minfo[39m] Login success: test002
-[10-09-2020 07:48:28] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 07:49:10] [[32minfo[39m] Login success: test002
-[10-09-2020 08:13:07] [[32minfo[39m] Login success: test002
-[10-09-2020 09:50:01] [[32minfo[39m] Login success: test002
-[10-09-2020 10:37:10] [[32minfo[39m] Login success: test002
-[10-09-2020 10:51:11] [[32minfo[39m] Login success: test002
-[10-09-2020 11:04:04] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 11:04:32] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 11:04:34] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 11:04:36] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 11:04:38] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 11:05:36] [[32minfo[39m] Login success: test002
-[10-09-2020 11:06:26] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 11:06:35] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
-[10-09-2020 11:06:39] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
-[10-09-2020 11:06:47] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 11:07:10] [[32minfo[39m] Login success: test002
-[10-09-2020 11:08:44] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 11:09:00] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 11:09:12] [[32minfo[39m] Login success: test002
-[10-09-2020 12:02:31] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 12:02:37] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 12:02:45] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 12:02:47] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 12:02:54] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 12:02:59] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 12:03:05] [[31merror[39m] TryCatch file server.js: ReferenceError: TokenSchema is not defined
-[10-09-2020 12:03:30] [[32minfo[39m] Login success: test002
-[10-09-2020 12:04:43] [[31merror[39m] loi notification
-[10-09-2020 12:05:01] [[32minfo[39m] Login success: test002
-[10-09-2020 12:08:58] [[31merror[39m] loi notification
-[10-09-2020 12:14:31] [[31merror[39m] loi notification
-[10-09-2020 12:15:04] [[31merror[39m] loi notification
-[10-09-2020 12:19:31] [[31merror[39m] loi notification
-[10-09-2020 12:36:36] [[31merror[39m] loi notification
-[10-09-2020 12:37:15] [[31merror[39m] loi notification
-[10-09-2020 12:37:17] [[31merror[39m] loi notification
-[10-09-2020 12:37:36] [[32minfo[39m] Login success: test002
-[10-09-2020 12:38:25] [[31merror[39m] loi notification
-[10-09-2020 12:38:48] [[32minfo[39m] Login success: test002
-[10-09-2020 12:39:52] [[31merror[39m] loi notification
-[10-09-2020 12:40:12] [[32minfo[39m] Login success: test002
-[10-09-2020 12:51:24] [[32minfo[39m] Login success: test002
-[10-09-2020 12:56:51] [[31merror[39m] loi notification
-[10-09-2020 12:58:09] [[32minfo[39m] Login success: test002
-[10-09-2020 13:01:23] [[31merror[39m] loi notification
-[10-09-2020 13:01:53] [[32minfo[39m] Login success: test002
+[10-09-2020 18:36:28] [[31merror[39m] loi notification
+[10-09-2020 18:36:38] [[32minfo[39m] Login success: thkha001
+[10-09-2020 18:43:58] [[31merror[39m] loi notification
+[10-09-2020 18:44:01] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[10-09-2020 18:44:03] [[31merror[39m] loi notification
+[10-09-2020 18:44:16] [[32minfo[39m] Login success: thkha001
+[10-09-2020 18:51:27] [[31merror[39m] loi notification
+[10-09-2020 18:51:41] [[32minfo[39m] Login success: thkha001
+[10-09-2020 18:53:29] [[31merror[39m] loi notification
+[10-09-2020 18:53:57] [[32minfo[39m] Login success: thkha001
+[10-09-2020 18:54:20] [[31merror[39m] loi notification
+[10-09-2020 18:54:25] [[31merror[39m] loi notification
+[10-09-2020 18:54:36] [[32minfo[39m] Login success: thkha001
+[10-09-2020 18:55:18] [[31merror[39m] loi notification
+[10-09-2020 18:55:29] [[31merror[39m] loi notification
+[10-09-2020 18:55:33] [[31merror[39m] loi notification
+[10-09-2020 18:56:29] [[32minfo[39m] Login success: thkha001
+[10-09-2020 18:57:59] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
+[10-09-2020 18:58:07] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '.'
+[10-09-2020 18:58:10] [[31merror[39m] loi notification
+[10-09-2020 18:58:14] [[31merror[39m] loi notification
+[10-09-2020 18:58:17] [[31merror[39m] loi notification
+[10-09-2020 18:58:33] [[32minfo[39m] Login success: thkha001
+[10-09-2020 18:59:04] [[31merror[39m] loi notification
+[10-09-2020 18:59:05] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
+[10-09-2020 18:59:11] [[31merror[39m] loi notification
+[10-09-2020 18:59:16] [[31merror[39m] loi notification
+[10-09-2020 18:59:45] [[32minfo[39m] Login success: thkha001
+[10-09-2020 19:01:27] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[10-09-2020 19:01:33] [[31merror[39m] loi notification
+[10-09-2020 19:01:37] [[31merror[39m] loi notification
+[10-09-2020 19:02:12] [[32minfo[39m] Login success: thkha001
+[10-09-2020 19:04:00] [[31merror[39m] loi notification
+[10-09-2020 19:04:04] [[31merror[39m] loi notification
+[10-09-2020 19:04:06] [[31merror[39m] loi notification
+[10-09-2020 19:04:30] [[31merror[39m] loi notification
+[10-09-2020 19:05:59] [[31merror[39m] loi notification
+[10-09-2020 19:06:03] [[31merror[39m] loi notification
+[10-09-2020 19:07:04] [[31merror[39m] TryCatch file server.js: SyntaxError: Invalid or unexpected token
+[10-09-2020 19:07:06] [[31merror[39m] loi notification
+[10-09-2020 19:07:13] [[31merror[39m] loi notification
+[10-09-2020 19:07:35] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
+[10-09-2020 19:07:38] [[31merror[39m] loi notification
+[10-09-2020 19:10:58] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ';'
+[10-09-2020 19:11:00] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ';'
+[10-09-2020 19:11:04] [[31merror[39m] TryCatch file server.js: SyntaxError: Invalid regular expression: missing /
+[10-09-2020 19:11:12] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ';'
+[10-09-2020 19:11:17] [[31merror[39m] loi notification
+[10-09-2020 19:11:42] [[31merror[39m] loi notification
+[10-09-2020 19:12:52] [[31merror[39m] loi notification
+[10-09-2020 19:13:17] [[31merror[39m] loi notification
+[10-09-2020 19:13:43] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '.'
+[10-09-2020 19:13:51] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '.'
+[10-09-2020 19:14:02] [[31merror[39m] loi notification
+[10-09-2020 19:14:11] [[31merror[39m] loi notification
+[10-09-2020 19:14:17] [[31merror[39m] loi notification
+[10-09-2020 19:14:19] [[31merror[39m] loi notification
+[10-09-2020 19:14:23] [[31merror[39m] loi notification
+[10-09-2020 19:14:28] [[31merror[39m] loi notification
+[10-09-2020 19:14:32] [[31merror[39m] loi notification
+[10-09-2020 19:14:36] [[31merror[39m] loi notification
+[10-09-2020 19:15:40] [[31merror[39m] loi notification
+[10-09-2020 19:16:04] [[31merror[39m] loi notification
+[10-09-2020 19:16:29] [[31merror[39m] loi notification
+[10-09-2020 19:18:26] [[31merror[39m] loi notification
+[10-09-2020 19:21:43] [[31merror[39m] TryCatch file server.js: ReferenceError: isGroupController is not defined
+[10-09-2020 19:21:46] [[31merror[39m] TryCatch file server.js: ReferenceError: is is not defined
+[10-09-2020 19:21:50] [[31merror[39m] loi notification
+[10-09-2020 19:21:58] [[31merror[39m] loi notification
+[10-09-2020 19:22:00] [[31merror[39m] loi notification
+[10-09-2020 19:22:05] [[31merror[39m] loi notification
+[10-09-2020 19:22:08] [[31merror[39m] loi notification
+[10-09-2020 19:22:11] [[31merror[39m] loi notification
+[10-09-2020 19:22:12] [[31merror[39m] loi notification
+[10-09-2020 19:22:19] [[31merror[39m] loi notification
+[10-09-2020 19:30:46] [[31merror[39m] loi notification
+[10-09-2020 19:30:55] [[32minfo[39m] Login success: thkha001
+[10-09-2020 20:03:58] [[31merror[39m] loi notification
+[10-09-2020 20:04:38] [[32minfo[39m] Login success: thkha001
+[10-09-2020 20:11:34] [[31merror[39m] loi notification
+[10-09-2020 20:11:44] [[32minfo[39m] Login success: thkha001

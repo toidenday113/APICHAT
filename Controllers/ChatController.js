@@ -77,7 +77,6 @@ module.exports = function (admin,io) {
           {},
           { skip: page, limit: perPage },
           function (err, chat) {
-            console.log(chat);
             return res.end(JSON.stringify(chat));
           }
         );
