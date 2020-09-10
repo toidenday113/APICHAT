@@ -89,6 +89,7 @@ module.exports.login = (req, res, next) => {
       return res.next(err);
     }
     if (!user) {
+      logger.info(`Login Fail: ${req.body.username}`);
       return res.json({ _id: '', SERVER_MESSAGE: 'Wrong Credentials' });
     }
 
@@ -99,8 +100,7 @@ module.exports.login = (req, res, next) => {
         user = user.toObject();
         delete user.password;
         delete user.__v;
-
-        console.log(user);
+        logger.info(`Login success: ${user.username}`);
         return res.end(JSON.stringify(user));
       }
     });
