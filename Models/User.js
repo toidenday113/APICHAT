@@ -11,6 +11,13 @@ const UserSchema = new Schema({
   avatar: String,
   status: String,
   mGroup: [{ idGroup: String }],
+  friend: [
+    {
+      sender: String,
+      receiver: String,
+      status: String,
+    },
+  ],
 });
 
 UserSchema.methods.generateHash = function (password) {

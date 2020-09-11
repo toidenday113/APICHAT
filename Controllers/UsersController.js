@@ -100,6 +100,7 @@ module.exports.login = (req, res, next) => {
         user = user.toObject();
         delete user.password;
         delete user.__v;
+        delete user.friend;
         logger.info(`Login success: ${user.username}`);
         return res.end(JSON.stringify(user));
       }
