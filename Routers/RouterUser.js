@@ -23,13 +23,14 @@ module.exports = (app, passport) => {
 
   // List user
   app.get("/user/list", isLoggedIn,ControllerUser.listUser);
-
+  app.post('/user/getReceiver', ControllerUser.getReceiver);
   app.post('/user/update/password', isLoggedIn, ControllerUser.updatePassword);
   app.post('/user/update/name', isLoggedIn, ControllerUser.updateName);
-  app.post('/user/status',isLoggedIn, ControllerUser.updateStatus)
+  app.post('/user/status', isLoggedIn, ControllerUser.updateStatus);
   app.post('/user/validateEmail', ControllerUser.validateEmail);
   app.post('/user/resetPass', ControllerUser.resetPassword);
-
+  
+  
   //Router Logout
   app.post('/logout', (req, res) => {
     req.logout();

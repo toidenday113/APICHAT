@@ -102,7 +102,7 @@ app.post("/group/list", isLoggedIn, GroupController.ListGroup);
 /**Add Token Notification */
 const UserTokenController = require("./Controllers/UserTokenController");
 app.post("/notification/addToken", isLoggedIn, UserTokenController.AddToken);
-logger.error("loi notification");
+//logger.error("loi notification");
 /**End Add Token */
 
   // Socket IO 

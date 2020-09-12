@@ -40,6 +40,7 @@ module.exports = function () {
       MemberGroup(s, mGroup._id);
       return res.end(JSON.stringify(mGroup));
     },
+
     // Join User Group
     JoinGroup: function (req, res) {
       req.body.user.forEach(element => {
@@ -48,7 +49,7 @@ module.exports = function () {
       return res.end('sdfsdf');
     },
 
-    //List Group
+    // List Group
     ListGroup: function (req, res) {
       if (!req.body.idUser) {
         return res.status(404).end('Not input');

@@ -89,3 +89,19 @@
 [12-09-2020 02:35:48] [[32minfo[39m] Login success: test002
 [12-09-2020 02:37:32] [[31merror[39m] loi notification
 [12-09-2020 02:37:54] [[32minfo[39m] Login success: test002
+[12-09-2020 15:19:27] [[31merror[39m] TryCatch file server.js: Error: Route.post() requires a callback function but got a [object Undefined]
+[12-09-2020 15:21:25] [[32minfo[39m] Login success: test002
+[12-09-2020 15:34:14] [[31merror[39m] TryCatch file server.js: Error: Route.post() requires a callback function but got a [object Undefined]
+[12-09-2020 15:34:35] [[32minfo[39m] Login success: test002
+[12-09-2020 15:35:33] [[31merror[39m] TryCatch file server.js: Error: Route.post() requires a callback function but got a [object Undefined]
+[12-09-2020 15:36:17] [[32minfo[39m] Login success: test002
+[12-09-2020 15:36:47] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
+[12-09-2020 15:38:17] [[32minfo[39m] Login success: test002
+[12-09-2020 15:40:59] [[32minfo[39m] Login success: test002
+[12-09-2020 15:41:51] [[32minfo[39m] Login success: test002
+[12-09-2020 15:53:40] [[32minfo[39m] Login success: test002
+[12-09-2020 16:16:00] [[32minfo[39m] Login success: test002
+[12-09-2020 16:19:21] [[32minfo[39m] Login Fail: thkha002
+[12-09-2020 16:19:29] [[32minfo[39m] Login success: thkha001
+[12-09-2020 16:40:12] [[32minfo[39m] Login success: thkha001
+[12-09-2020 21:31:08] [[32minfo[39m] Login success: test002

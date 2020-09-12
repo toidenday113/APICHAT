@@ -102,6 +102,7 @@ module.exports.login = (req, res, next) => {
         delete user.__v;
         delete user.friend;
         logger.info(`Login success: ${user.username}`);
+        res.writeHead(200, { 'Content-Type': 'application/json' });
         return res.end(JSON.stringify(user));
       }
     });
@@ -167,6 +168,7 @@ module.exports.delete = (req, res) => {
 module.exports.listUser = function (req, res) {
   User.find({}, '_id name username email avatar status', function (err, user) {
     if (user) {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
       return res.end(JSON.stringify(user));
     }
   });
@@ -182,6 +184,7 @@ module.exports.updatePassword = function (req, res) {
       } else {
         res.json({ validate: 0, message: 'Password not Right' });
       }
+      res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify(user));
     });
   } catch (error) {
@@ -217,43 +220,45 @@ module.exports.resetPassword = function (req, res) {
 };
 
 module.exports.updateName = function (req, res) {
-	try {
-		
-		User.findById(req.user.id, (err, user) => {
+  try {
+    User.findById(req.user.id, (err, user) => {
+      if (user) {
+        user.name = req.body.name ? req.body.name : user.name;
+        user.save();
+        user = user.toObject();
+        delete user.password;
+        delete user.__v;
+        res.end(JSON.stringify(user));
+      }
+    });
+  } catch (error) {}
+};
+module.exports.updateStatus = function (req, res) {
+  try {
+    User.findById(req.user.id, (err, user) => {
+      if (user) {
+        user.status = req.body.status ? req.body.status : 'offline';
+        user.save();
+        user = user.toObject();
+        delete user.password;
+        delete user.__v;
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify(user));
+      }
+    });
+  } catch (error) {}
+};
 
-			if(user){
-				user.name = req.body.name ? req.body.name : user.name;
-				user.save();
-				user = user.toObject();
-				delete user.password;
-				delete user.__v;
-				res.end(JSON.stringify(user));
-			}
-
-
-		});
-
-	} catch (error) {
-		
-	}
-}
-module.exports.updateStatus = function(req, res){
-    try {
-      
-      User.findById(req.user.id, (err, user)=>{
-
-        if(user){
-          user.status = req.body.status ? req.body.status : "offline";
-          user.save();
-          user = user.toObject();
-          delete user.password;
-          delete user.__v;
-          res.end(JSON.stringify(user));
-        }
-      
-      });
-
-    } catch (error) {
-      
+module.exports.getReceiver = function (req, res) {
+  User.findOne({_id:req.body.idReceiver }, (err, user) => {
+    if (user) {
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      user = user.toObject();
+      delete user.password;
+      delete user.__v;
+      res.end(JSON.stringify(user));
+    } else {
+      return res.status(400).end('User not found');
     }
-}
+  });
+};

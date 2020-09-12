@@ -59,6 +59,7 @@ module.exports = function (admin,io) {
         }
       });
       io.emit('newMessenger', JSON.stringify(mChat));
+      res.writeHead(200, { 'Content-Type': 'application/json' });
       return res.end(JSON.stringify(mChat));
     },
 
@@ -77,6 +78,7 @@ module.exports = function (admin,io) {
           {},
           { skip: page, limit: perPage },
           function (err, chat) {
+            res.writeHead(200, { 'Content-Type': 'application/json' });
             return res.end(JSON.stringify(chat));
           }
         );
