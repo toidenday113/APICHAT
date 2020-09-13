@@ -1,12 +1,13 @@
 //const BASE_URL = 'mongodb://localhost:27020/DataChat?replSet=rs1';
 //const BASE_URL = 'mongodb://localhost:27022/AppChat?replSet=rsapp';
-const BASE_URL = 'mongodb+srv://khatran:69kHooRe8olluKZh@cluster0.kmopb.mongodb.net/DevChat';
+const BASE_URL =
+  'mongodb+srv://khatran:69kHooRe8olluKZh@cluster0.kmopb.mongodb.net/DevChat';
 const express = require('express');
 const app = express();
 app.use(express.static('public'));
 const server = require('http').createServer(app);
 const io = require('socket.io').listen(server);
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 /*=============*/
 const Passport = require('passport');
@@ -103,7 +104,11 @@ try {
   app.post('/group/updateName', isLoggedIn, GroupController.UpdateNameGroup);
   app.post('/group/deleteGroup', isLoggedIn, GroupController.DeleteOne);
   app.post('/group/outGroup', isLoggedIn, GroupController.OutGroup);
-  app.post('/group/listUseMember', isLoggedIn, GroupController.ListUserMemberGroup);
+  app.post(
+    '/group/listUseMember',
+    isLoggedIn,
+    GroupController.ListUserMemberGroup
+  );
   /**End Group */
 
   /** MESSENGER GROUP */
