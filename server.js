@@ -16,13 +16,13 @@ const flash = require('connect-flash');
 const cookieParser = require('cookie-parser');
 const fileupload = require('express-fileupload');
 const logger = require('./Utils/logger');
-const admin = require("firebase-admin");
-const serviceAccount = require("./Config/serviceAccountKey.json");
+const admin = require('firebase-admin');
+const serviceAccount = require('./Config/serviceAccountKey.json');
 
 //Config Firebase Admin
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://devchat-7209d.firebaseio.com"
+  databaseURL: 'https://devchat-7209d.firebaseio.com',
 });
 
 // Connection mongodb
@@ -54,7 +54,6 @@ app.use(fileupload());
 console.clear();
 /**END USE */
 
-
 // Config Router
 try {
   function isLoggedIn(req, res, next) {
@@ -68,7 +67,7 @@ try {
   require('./Routers/RouterUser')(app, Passport);
 
   /**  CHAT */
-  const ChatController = require('./Controllers/ChatController')(admin,io);
+  const ChatController = require('./Controllers/ChatController')(admin, io);
   app.post('/chat/chatChar', isLoggedIn, ChatController.createChatChar);
   app.post('/chat/listChat', isLoggedIn, ChatController.listChat);
   app.post('/chat/chatImage', isLoggedIn, ChatController.createChatImage);
@@ -90,22 +89,38 @@ try {
   );
   /** End NotificationUser */
 
-/** Group */
-const GroupController = require("./Controllers/GroupController")(io);
-app.post("/group/CreateGroup", isLoggedIn, GroupController.CreateGroup);
-app.post("/group/joinGroup", isLoggedIn, GroupController.JoinGroup);
-app.post("/group/list", isLoggedIn, GroupController.ListGroup);
-/**End Group */
+  /** Group */
+  const GroupController = require('./Controllers/GroupController')(io);
+  app.post('/group/CreateGroup', isLoggedIn, GroupController.CreateGroup);
+  app.post('/group/joinGroup', isLoggedIn, GroupController.JoinGroup);
+  app.post('/group/list', isLoggedIn, GroupController.ListGroup);
+  app.post(
+    '/group/updateAvatar',
+    isLoggedIn,
+    GroupController.UpdateAvatarGroup
+  );
+  app.post('/group/updateName', isLoggedIn, GroupController.UpdateNameGroup);
+  app.post('/group/deleteGroup', isLoggedIn, GroupController.DeleteOne);
+  app.post('/group/outGroup', isLoggedIn, GroupController.OutGroup);
+  app.post('/group/listUseMember', isLoggedIn, GroupController.ListUserMemberGroup);
+  /**End Group */
 
+  /** MESSENGER GROUP */
+  const MessengerGroup = require('./Controllers/MessengerGroupController')(io);
+  app.post('/messengerGroup/list', isLoggedIn, MessengerGroup.ListMessenger);
+  app.post('/messengerGroup/chatText', isLoggedIn, MessengerGroup.CreateText);
+  app.post('/messengerGroup/chatImage', isLoggedIn, MessengerGroup.CreateImage);
+  app.post('/messengerGroup/deleteAll', isLoggedIn, MessengerGroup.DeleteAll);
+  app.post('/messengerGroup/deleteOne', isLoggedIn, MessengerGroup.DeleteOne);
+  /** END  */
 
+  /**Add Token Notification */
+  const UserTokenController = require('./Controllers/UserTokenController');
+  app.post('/notification/addToken', isLoggedIn, UserTokenController.AddToken);
+  //logger.error("loi notification");
+  /**End Add Token */
 
-/**Add Token Notification */
-const UserTokenController = require("./Controllers/UserTokenController");
-app.post("/notification/addToken", isLoggedIn, UserTokenController.AddToken);
-//logger.error("loi notification");
-/**End Add Token */
-
-  // Socket IO 
+  // Socket IO
   io.on('connection', socket => {
     let users = [];
 
