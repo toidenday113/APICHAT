@@ -1,5 +1,6 @@
 //const BASE_URL = 'mongodb://localhost:27020/DataChat?replSet=rs1';
-const BASE_URL = 'mongodb://localhost:27022/AppChat?replSet=rsapp';
+//const BASE_URL = 'mongodb://localhost:27022/AppChat?replSet=rsapp';
+const BASE_URL = 'mongodb+srv://khatran:69kHooRe8olluKZh@cluster0.kmopb.mongodb.net/DevChat';
 const express = require('express');
 const app = express();
 app.use(express.static('public'));

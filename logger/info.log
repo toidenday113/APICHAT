@@ -112,3 +112,35 @@
 [14-09-2020 01:30:11] [[32minfo[39m] Login success: test002
 [14-09-2020 01:43:09] [[32minfo[39m] Login success: thkha001
 [14-09-2020 01:46:23] [[32minfo[39m] Login success: test002
+[14-09-2020 02:37:34] [[32minfo[39m] Login success: test002
+[14-09-2020 02:39:45] [[32minfo[39m] Login success: thkha001
+[14-09-2020 02:44:01] [[32minfo[39m] Login success: thkha001
+[14-09-2020 02:45:13] [[32minfo[39m] Login success: test002
+[14-09-2020 02:50:22] [[32minfo[39m] Login success: thkha001
+[14-09-2020 02:52:00] [[32minfo[39m] Login Fail: thkha001
+[14-09-2020 02:52:03] [[32minfo[39m] Login Fail: thkha001
+[14-09-2020 02:52:06] [[32minfo[39m] Login success: thkha001
+[14-09-2020 02:54:55] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
+[14-09-2020 02:55:21] [[32minfo[39m] Login success: thkha001
+[14-09-2020 02:58:43] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[14-09-2020 02:59:25] [[32minfo[39m] Login success: thkha001
+[14-09-2020 03:01:02] [[32minfo[39m] Login success: thkha001
+[14-09-2020 03:01:49] [[32minfo[39m] Login success: thkha001
+[14-09-2020 03:04:09] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '.'
+[14-09-2020 03:04:18] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[14-09-2020 03:04:32] [[32minfo[39m] Login success: thkha001
+[14-09-2020 03:08:41] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[14-09-2020 03:09:20] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '{'
+[14-09-2020 03:09:32] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[14-09-2020 03:09:36] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[14-09-2020 03:10:05] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[14-09-2020 03:10:08] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[14-09-2020 03:11:12] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[14-09-2020 03:11:33] [[32minfo[39m] Login success: thkha001
+[14-09-2020 03:11:46] [[31merror[39m] error out group: MongoError: Cannot use the part (idUser) of (mUser.idUser) to traverse the element ({mUser: [ { _id: ObjectId('5f5bc1318875312d94493e6a'), idUser: "5f2af2d92fcd883768f89008" }, { _id: ObjectId('5f5bc1318875312d94493e6b'), idUser: "5f5061b987814109d04fdf47" } ]})
+[14-09-2020 03:12:07] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '.'
+[14-09-2020 03:12:23] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
+[14-09-2020 03:12:36] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '.'
+[14-09-2020 03:12:40] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '.'
+[14-09-2020 03:12:46] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '.'
+[14-09-2020 03:13:10] [[32minfo[39m] Login success: thkha001

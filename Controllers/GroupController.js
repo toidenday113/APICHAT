@@ -166,19 +166,18 @@ module.exports = function (io) {
           }
         }
       );
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      return res.end({ message: 'ok' });
+      return res.status(200).json({ message: 'ok' });
     },
     // User Out group
     OutGroup: function (req, res) {
       if (!req.body.idGroup || !req.body.idUser){
         return res.status(400).end('invalid input');
       }
-      Group.findOne(
+      Group.updateOne(
         {
           _id: req.body.idGroup,
           "mUser.idUser": req.body.idUser
-        },
+        },{$pull:{"mUser":{idUser:req.body.idUser}}},
         function (err, group){
           if(err){
             logger.error(`error out group: ${err}`);
@@ -187,11 +186,9 @@ module.exports = function (io) {
           if(!group){
             return res.status(400).end('Not found Info group');
           }
-          group.mUser.pull({ idUser:req.body.idUser});
-          group.save();
-          res.writeHead(200, { 'Content-Type': 'application/json' });
-          return res.end({message: 'ok'});
-
+          if(group){
+            return res.status(200).json({message: 'ok'});
+          }
         }
       )
     },

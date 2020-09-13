@@ -67,8 +67,7 @@ module.exports = function (io) {
             logger.error(`Error messenger: ${err}`);
             return res.status(400).end('error query messenger');
           }
-          res.writeHead(200, { 'Content-Type': 'application/json' });
-          return res.end(JSON.stringify(result));
+          return res.status(200).json(JSON.stringify(result));
         }
       );
     },
@@ -84,12 +83,11 @@ module.exports = function (io) {
         function (err) {
           if (err) {
             logger.error(`Error delete messenger: ${err}`);
-            return res.status(400).end('');
+            return res.status(400).end('error #400');
           }
         }
       );
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      return res.end({ message: 'ok' });
+      return res.status(200).json({ message: 'ok' });
     },
     //Delete one messenger of one Group
     DeleteOne: function (req, res) {
@@ -107,8 +105,7 @@ module.exports = function (io) {
           }
         }
       );
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      return res.end({ message: 'ok' });
+      return res.status(200).json({ message: 'ok' });
     },
   };
 };
