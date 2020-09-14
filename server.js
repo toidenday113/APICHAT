@@ -14,6 +14,7 @@ const Passport = require('passport');
 const mongoose = require('mongoose');
 const BodyParser = require('body-parser');
 const session = require('express-session');
+const MemoryStore = require('session-memory-store')(session);
 const flash = require('connect-flash');
 const cookieParser = require('cookie-parser');
 const fileupload = require('express-fileupload');
@@ -46,6 +47,7 @@ app.use(
     secret: 'dev',
     resave: true,
     saveUninitialized: true,
+    store: new MemoryStore(60 * 60 * 12) // 12 day
   })
 );
 app.use(Passport.initialize());
