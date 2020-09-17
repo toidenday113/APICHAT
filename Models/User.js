@@ -13,8 +13,7 @@ const UserSchema = new Schema({
   mGroup: [{ idGroup: String }],
   friend: [
     {
-      sender: String,
-      receiver: String,
+      idUser: String,
       status: String,
     },
   ],

@@ -3,7 +3,6 @@ const express = require('express');
 
 module.exports = (app, passport) => {
   app.get('/', (req, res) => {
-    res.writeHead(200, { 'Content-Type': 'application/json' });
     res.end('ResTful API Chat v1.0');
   });
 
@@ -22,19 +21,18 @@ module.exports = (app, passport) => {
   app.post('/user/update', isLoggedIn, ControllerUser.update);
 
   // List user
-  app.get("/user/list", isLoggedIn,ControllerUser.listUser);
+  app.get('/user/list', isLoggedIn, ControllerUser.listUser);
   app.post('/user/getReceiver', ControllerUser.getReceiver);
   app.post('/user/update/password', isLoggedIn, ControllerUser.updatePassword);
   app.post('/user/update/name', isLoggedIn, ControllerUser.updateName);
   app.post('/user/status', isLoggedIn, ControllerUser.updateStatus);
   app.post('/user/validateEmail', ControllerUser.validateEmail);
   app.post('/user/resetPass', ControllerUser.resetPassword);
-  
-  
+
   //Router Logout
   app.post('/logout', (req, res) => {
     req.logout();
-    res.json({message:"logout"});
+    res.json({ message: 'logout' });
   });
 };
 

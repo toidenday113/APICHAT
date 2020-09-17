@@ -1,29 +1,98 @@
-[10-09-2020 19:30:46] [[31merror[39m] loi notification
-[10-09-2020 20:03:58] [[31merror[39m] loi notification
-[10-09-2020 20:11:34] [[31merror[39m] loi notification
-[11-09-2020 19:32:07] [[31merror[39m] loi notification
-[11-09-2020 21:00:53] [[31merror[39m] loi notification
-[12-09-2020 01:25:15] [[31merror[39m] loi notification
-[12-09-2020 02:35:36] [[31merror[39m] loi notification
-[12-09-2020 02:37:32] [[31merror[39m] loi notification
-[12-09-2020 15:19:27] [[31merror[39m] TryCatch file server.js: Error: Route.post() requires a callback function but got a [object Undefined]
-[12-09-2020 15:34:14] [[31merror[39m] TryCatch file server.js: Error: Route.post() requires a callback function but got a [object Undefined]
-[12-09-2020 15:35:33] [[31merror[39m] TryCatch file server.js: Error: Route.post() requires a callback function but got a [object Undefined]
-[12-09-2020 15:36:47] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
-[14-09-2020 02:54:55] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
-[14-09-2020 02:58:43] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[14-09-2020 03:04:09] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '.'
-[14-09-2020 03:04:18] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[14-09-2020 03:08:41] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
-[14-09-2020 03:09:20] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '{'
-[14-09-2020 03:09:32] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
-[14-09-2020 03:09:36] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
-[14-09-2020 03:10:05] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
-[14-09-2020 03:10:08] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
-[14-09-2020 03:11:12] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
-[14-09-2020 03:11:46] [[31merror[39m] error out group: MongoError: Cannot use the part (idUser) of (mUser.idUser) to traverse the element ({mUser: [ { _id: ObjectId('5f5bc1318875312d94493e6a'), idUser: "5f2af2d92fcd883768f89008" }, { _id: ObjectId('5f5bc1318875312d94493e6b'), idUser: "5f5061b987814109d04fdf47" } ]})
-[14-09-2020 03:12:07] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '.'
-[14-09-2020 03:12:23] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
-[14-09-2020 03:12:36] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '.'
-[14-09-2020 03:12:40] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '.'
-[14-09-2020 03:12:46] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '.'
+[17-09-2020 00:55:54] [[31merror[39m] error list user friend MongoError: unknown top level operator: $not
+[17-09-2020 01:03:55] [[31merror[39m] error list user friend MongoError: BSON field 'distinct.key' is the wrong type 'object', expected type 'string'
+[17-09-2020 01:03:56] [[31merror[39m] error list user friend MongoError: BSON field 'distinct.key' is the wrong type 'object', expected type 'string'
+[17-09-2020 01:03:57] [[31merror[39m] error list user friend MongoError: BSON field 'distinct.key' is the wrong type 'object', expected type 'string'
+[17-09-2020 01:09:45] [[31merror[39m] error list user friend Error: Query filter must be an object, got an array 
+[17-09-2020 01:09:46] [[31merror[39m] error list user friend Error: Query filter must be an object, got an array 
+[17-09-2020 01:09:47] [[31merror[39m] error list user friend Error: Query filter must be an object, got an array 
+[17-09-2020 01:10:11] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 01:10:17] [[31merror[39m] error list user friend Error: Query filter must be an object, got an array 
+[17-09-2020 01:14:26] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
+[17-09-2020 01:14:28] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
+[17-09-2020 01:14:31] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
+[17-09-2020 01:15:06] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
+[17-09-2020 08:27:20] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[17-09-2020 08:29:33] [[31merror[39m] TryCatch file server.js: SyntaxError: Invalid or unexpected token
+[17-09-2020 08:31:47] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 08:31:52] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 08:31:55] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 08:33:27] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 08:33:30] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 08:33:33] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 08:33:47] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 08:33:52] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 08:36:18] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[17-09-2020 08:36:19] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[17-09-2020 08:36:37] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected string
+[17-09-2020 08:36:40] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected string
+[17-09-2020 08:36:42] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected string
+[17-09-2020 08:41:35] [[31merror[39m] TryCatch file server.js: SyntaxError: Function statements require a function name
+[17-09-2020 08:46:15] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected string
+[17-09-2020 08:46:19] [[31merror[39m] TryCatch file server.js: SyntaxError: Invalid or unexpected token
+[17-09-2020 08:46:21] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected string
+[17-09-2020 08:47:34] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
+[17-09-2020 08:47:45] [[31merror[39m] error list user friend CastError: Cast to Array failed for value "{ friend: [], 'friend.status': 'request' }" at path "$or" for model "User"
+[17-09-2020 08:48:06] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 08:56:06] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 08:56:16] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ';'
+[17-09-2020 08:56:23] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ';'
+[17-09-2020 08:56:47] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ';'
+[17-09-2020 08:56:55] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ';'
+[17-09-2020 08:56:58] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 08:57:05] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ';'
+[17-09-2020 08:57:10] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ';'
+[17-09-2020 08:57:12] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 08:57:30] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 08:57:33] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 08:57:35] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 08:57:48] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 08:57:52] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ';'
+[17-09-2020 08:57:59] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ';'
+[17-09-2020 08:58:00] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
+[17-09-2020 08:58:03] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ';'
+[17-09-2020 08:58:23] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ';'
+[17-09-2020 08:58:28] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ';'
+[17-09-2020 08:58:30] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ';'
+[17-09-2020 08:58:40] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
+[17-09-2020 08:58:53] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
+[17-09-2020 08:58:57] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 08:59:00] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 08:59:03] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
+[17-09-2020 08:59:04] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
+[17-09-2020 08:59:11] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 08:59:16] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
+[17-09-2020 08:59:19] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
+[17-09-2020 08:59:21] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
+[17-09-2020 08:59:29] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
+[17-09-2020 08:59:31] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
+[17-09-2020 08:59:36] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
+[17-09-2020 08:59:38] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
+[17-09-2020 08:59:45] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
+[17-09-2020 08:59:48] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
+[17-09-2020 08:59:50] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
+[17-09-2020 08:59:59] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
+[17-09-2020 09:00:01] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 09:00:06] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
+[17-09-2020 09:00:07] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
+[17-09-2020 09:00:53] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
+[17-09-2020 09:00:57] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
+[17-09-2020 09:01:36] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
+[17-09-2020 09:09:50] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected end of input
+[17-09-2020 09:09:52] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 09:10:01] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 09:10:10] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 09:10:14] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 09:10:20] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 09:10:23] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 09:10:30] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 09:10:36] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 09:11:37] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 09:11:41] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 09:11:48] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 09:11:53] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 09:11:59] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 09:12:08] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
+[17-09-2020 09:12:15] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '}'
+[17-09-2020 09:12:25] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[17-09-2020 09:12:31] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[17-09-2020 09:12:36] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list

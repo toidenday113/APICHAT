@@ -1,7 +1,6 @@
 //const BASE_URL = 'mongodb://localhost:27020/DataChat?replSet=rs1';
-//const BASE_URL = 'mongodb://localhost:27022/AppChat?replSet=rsapp';
-const BASE_URL =
-  'mongodb+srv://khatran:69kHooRe8olluKZh@cluster0.kmopb.mongodb.net/DevChat';
+const BASE_URL = 'mongodb://localhost:27022/AppChat?replSet=rsapp';
+//const BASE_URL ='mongodb+srv://khatran:69kHooRe8olluKZh@cluster0.kmopb.mongodb.net/DevChat';
 const express = require('express');
 const app = express();
 app.use(express.static('public'));
@@ -127,6 +126,14 @@ try {
   app.post('/notification/addToken', isLoggedIn, UserTokenController.AddToken);
   //logger.error("loi notification");
   /**End Add Token */
+
+/** Request Friend */
+const Friend =require('./Controllers/FriendController')(io, admin);
+app.post('/friend/requestFriend', isLoggedIn, Friend.requestFriend);
+app.post('/friend/applyFriend', isLoggedIn, Friend.ApplyFriend);
+app.get('/friend/listRequestFriend', Friend.ListRequestFriend);
+/** End Request Friend */
+
 
   // Socket IO
   io.on('connection', socket => {

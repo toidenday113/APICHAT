@@ -166,7 +166,7 @@ module.exports.delete = (req, res) => {
 };
 
 module.exports.listUser = function (req, res) {
-  User.find({}, '_id name username email avatar status', function (err, user) {
+  User.find({}, '_id name username email avatar status friend  mGroup', function (err, user) {
     if (user) {
       res.writeHead(200, { 'Content-Type': 'application/json' });
       return res.end(JSON.stringify(user));
@@ -250,7 +250,7 @@ module.exports.updateStatus = function (req, res) {
 };
 
 module.exports.getReceiver = function (req, res) {
-  User.findOne({_id:req.body.idReceiver }, (err, user) => {
+  User.findOne({ _id: req.body.idReceiver }, (err, user) => {
     if (user) {
       res.writeHead(200, { 'Content-Type': 'application/json' });
       user = user.toObject();
@@ -262,3 +262,4 @@ module.exports.getReceiver = function (req, res) {
     }
   });
 };
+

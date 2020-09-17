@@ -1,82 +1,132 @@
-const Friend = require('../Models/Friend');
+const User = require('../Models/User');
+const UserToken = require('../Models/UserToken');
 const logger = require('../Utils/logger');
 
-module.exports = function () {
+module.exports = function (io, admin) {
   return {
-    // Request add friend
-    AddFriend: function (req, res) {
-      if (!req.body.sender || !req.body.receiver || !req.body.status) {
-        logger.error('Request Friend Error input');
-        return res.status(400).end('invalid input');
-      }
-
-      let mFriend = new Friend();
-      mFriend.sender = req.body.sender;
-      mFriend.receiver = req.body.receiver;
-      mFriend.status = req.body.status;
-
-      mFriend.save(function (err) {
-        if (err) {
-          logger.error('Request Friend Error');
-          return res.status(400).end('Save error!');
-        }
-      });
-      return res.end(JSON.stringify(mFriend));
-    },
-
-    // List Friend
-    ListFriend: function (req, res) {
+    // Kết bạn
+    requestFriend: function (req, res) {
       if (!req.body.sender || !req.body.receiver) {
-        logger.error('List Friend Error input');
         return res.status(400).end('invalid input');
       }
-      Friend.find(
+      User.findOne(
         {
-          sender: req.body.sender,
-          status: req.body.status,
+          _id: req.body.sender,
         },
-        function (err, friend) {
+        function (err, userSender) {
           if (err) {
-            logger.error('list friend Error');
-            return res.status(400).end('not list friend');
+            return res.status(400).end('not found user');
           }
-          return res.end(JSON.stringify(friend));
+          if (userSender) {
+            userSender.friend.push({
+              idUser: req.body.receiver,
+              status: 'request',
+            });
+            userSender.save();
+          }
+          User.findOne(
+            {
+              _id: req.body.receiver,
+            },
+            function (err, userReceiver) {
+              if (err) {
+                return res.status(400).end('not found user');
+              }
+              if (userReceiver) {
+                userReceiver.friend.push({
+                  idUser: req.body.sender,
+                  status: 'request',
+                });
+                userReceiver.save();
+              }
+            }
+          ); // End User receiver
+          sendNotifyRequestFriend(admin, req.body.receiver);
+          return res.json({ message: 'ok' });
         }
       );
     },
-
-    CancelFriend: function (req, res) {
-      Friend.deleteOne(
+    ApplyFriend: function (req, res) {
+      if (!req.body.sender || !req.body.receiver) {
+        return res.status(400).end('invalid input');
+      }
+      User.updateOne(
         {
-          $or: [
-            { sender: req.body.sender, receiver: req.body.receiver },
-            { sender: req.body.receiver, receiver: req.body.sender },
-          ],
-        },
-        function (err, resultDelete) {
-          if (err) {
-            return res.status(400).end('Not friend');
+          _id: req.body.sender,
+        },{
+          "$set":{
+            "friend.$.status": "ok"
           }
-          if (resultDelete == 1) {
-            return res.json({ message: 'ok' });
+        },function (err){
+          if(err){
+            logger.error(`error update friend ${err}`);
+            return res.status(400).end('error update friend');
+          }
+        }
+      );
+      User.updateOne(
+        {
+          _id: req.body.receiver,
+        },{
+          "$set":{
+            "friend.$.status": "ok"
+          }
+        },function (err){
+          if(err){
+            logger.error(`error update friend ${err}`);
+            return res.status(400).end('error update friend');
           }
         }
       );
     },
+    // List friend
+    ListRequestFriend: function (req, res) {
+      User.find({
+        $or:[
+          {friend:[]},
+          {"friend.status": "request"}
+        ]
+       
+      },
+        function (err, result) {
+          if (err) {
+            logger.error(`error list user friend ${err}`);
+            return res.status(400).end('error list user friend');
+          }
+          res.writeHead(200, { 'Content-Type': 'application/json' });
+          return res.end(JSON.stringify(result));
+        });
 
-    //
-    AcceptFriend: function (req, res) {
-      Friend.findOne(
-        {
-          $or: [
-            { sender: req.body.sender, receiver: req.body.receiver },
-            { sender: req.body.receiver, receiver: req.body.sender },
-          ],
-        },
-        function (err, friend) {
-            
-        }
-      );
     },
   };
 };
+function sendNotifyRequestFriend(admin, receiver) {
+  UserToken.findOne(
+    {
+      idUser: receiver,
+    },
+    function (err, result) {
+      if (err) {
+        logger.error(`error get token: ${err}`);
+        return res.status(400).end('error get token');
+      }
+      if (result) {
+        const message = {
+          data: {
+            requestFriend: 'ok',
+          },
+          token: result.tokenNotify,
+        };
+        admin
+          .messaging()
+          .send(message)
+          .then(response => {
+            logger.info(`send notification successful`);
+          })
+          .catch(error => {
+            logger.error(`send notification error`);
+          });
+      }
+    }
+  );
+}
