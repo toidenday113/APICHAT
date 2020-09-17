@@ -117,8 +117,8 @@ function SendNotification(req, res, content, admin) {
 						function (err, result) {
 							const message = {
 								notification: {
-									title: 'test',
-									body: 'send nodejs',
+									title: 'Dev',
+									body: mContent.receiver,
 								},
 								token: result.tokenNotify,
 							};
