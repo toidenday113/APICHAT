@@ -46,13 +46,24 @@ module.exports = function (io) {
           _id: req.body.idGroup,
         },
         function (err, group) {
-          if (err) {
+          if (err || !group) {
             logger.error(`Error query one group`);
             return res.status(400).end('error query group');
           }
           if (group) {
             req.body.user.forEach(element => {
               group.mUser.push({ idUser: element });
+              User.findOne(
+                {
+                  _id: element,
+                },
+                function (err, u) {
+                  if (!err || u) {
+                    u.mGroup.push({ idGroup: req.body.idGroup });
+                    u.save();
+                  }
+                }
+              );
             });
             group.save(function (err) {
               if (err) {
@@ -60,10 +71,9 @@ module.exports = function (io) {
               }
             });
           }
+          return res.json({ message: 'ok' });
         }
       );
-      res.writeHead(200, { 'Content-Type': 'application/json' });
-      return res.end({ message: 'ok' });
     },
     // List Group
     ListGroup: function (req, res) {
@@ -170,50 +180,51 @@ module.exports = function (io) {
     },
     // User Out group
     OutGroup: function (req, res) {
-      if (!req.body.idGroup || !req.body.idUser){
+      if (!req.body.idGroup || !req.body.idUser) {
         return res.status(400).end('invalid input');
       }
       Group.updateOne(
         {
           _id: req.body.idGroup,
-          "mUser.idUser": req.body.idUser
-        },{$pull:{"mUser":{idUser:req.body.idUser}}},
-        function (err, group){
-          if(err){
+          'mUser.idUser': req.body.idUser,
+        },
+        { $pull: { mUser: { idUser: req.body.idUser } } },
+        function (err, group) {
+          if (err) {
             logger.error(`error out group: ${err}`);
             return res.status(400).end('error out group');
           }
-          if(!group){
+          if (!group) {
             return res.status(400).end('Not found Info group');
           }
-          if(group){
-            return res.status(200).json({message: 'ok'});
+          if (group) {
+            return res.status(200).json({ message: 'ok' });
           }
         }
-      )
+      );
     },
     // List User member groups
     ListUserMemberGroup: function (req, res) {
-      if (!req.body.idGroup){
+      if (!req.body.idGroup) {
         return res.status(400).end('invalid input');
       }
       User.find(
         {
-          "mGroup.idGroup": req.body.idGroup
+          'mGroup.idGroup': req.body.idGroup,
         },
-        function (err, user){
-          if(err){
+        function (err, user) {
+          if (err) {
             logger.error(`Error list user member group: ${err}`);
             return res.status(400).end('error list user member group');
           }
-          if(!user){
+          if (!user) {
             return res.status(400).end('not found user');
           }
           res.writeHead(200, { 'Content-Type': 'application/json' });
           return res.end(JSON.stringify(user));
         }
-      )
-    }
+      );
+    },
   };
 };
 function randomValueBase64(len) {

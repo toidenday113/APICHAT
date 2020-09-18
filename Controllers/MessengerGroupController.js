@@ -67,7 +67,7 @@ module.exports = function (io) {
             logger.error(`Error messenger: ${err}`);
             return res.status(400).end('error query messenger');
           }
-          return res.status(200).json(JSON.stringify(result));
+          return res.status(200).end(JSON.stringify(result));
         }
       );
     },
