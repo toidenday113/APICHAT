@@ -107,3 +107,25 @@
 [18-09-2020 01:18:44] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ')'
 [18-09-2020 01:44:15] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
 [18-09-2020 02:07:05] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[19-09-2020 01:26:08] [[31merror[39m] Error check file avatar group: TypeError [ERR_INVALID_CALLBACK]: Callback must be a function. Received undefined
+[20-09-2020 01:07:50] [[31merror[39m] TryCatch file server.js: Error: Cannot find module './Controllers/LastMessengerController'
+Require stack:
+- D:\Lab_LapTrinh\NodeJs\APICHAT\Controllers\MessengerGroupController.js
+- D:\Lab_LapTrinh\NodeJs\APICHAT\server.js
+[20-09-2020 01:08:01] [[31merror[39m] TryCatch file server.js: Error: Cannot find module './Controllers/LastMessengerController'
+Require stack:
+- D:\Lab_LapTrinh\NodeJs\APICHAT\Controllers\MessengerGroupController.js
+- D:\Lab_LapTrinh\NodeJs\APICHAT\server.js
+[20-09-2020 01:12:29] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '('
+[20-09-2020 01:15:28] [[31merror[39m] TryCatch file server.js: Error: Cannot find module 'LastMessengerController'
+Require stack:
+- D:\Lab_LapTrinh\NodeJs\APICHAT\Controllers\MessengerGroupController.js
+- D:\Lab_LapTrinh\NodeJs\APICHAT\server.js
+[20-09-2020 01:16:42] [[31merror[39m] TryCatch file server.js: Error: Cannot find module '/LastMessengerController'
+Require stack:
+- D:\Lab_LapTrinh\NodeJs\APICHAT\Controllers\MessengerGroupController.js
+- D:\Lab_LapTrinh\NodeJs\APICHAT\server.js
+[20-09-2020 01:22:10] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[20-09-2020 01:22:13] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[20-09-2020 01:22:37] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[20-09-2020 01:22:42] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list

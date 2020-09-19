@@ -2,6 +2,8 @@ const MessengerGroup = require('../Models/MessengerGroup');
 const logger = require('../Utils/logger');
 const randomValueName = require('../Utils/randomValueName');
 const fs = require('fs');
+const LastMessenger = require('./LastMessengerController');
+
 module.exports = function (io) {
   return {
     //Create messenger text
@@ -21,17 +23,23 @@ module.exports = function (io) {
         }
       });
       io.emit('newMessengerGroup', JSON.stringify(messenger));
+      LastMessenger.CreateLastMessenger(
+        req.body.sender,
+        req.body.idGroup,
+        messenger.content,
+        'group'
+      );
       res.writeHead(200, { 'Content-Type': 'application/json' });
       return res.end(JSON.stringify(messenger));
     },
     // Create messenger Image
     CreateImage: function (req, res) {
-      if (!req.body.idGroup || !req.body.sender || !req.body.content) {
+      if (!req.body.idGroup || !req.body.sender || !req.files) {
         return res.status(400).end('invalid input');
       }
 
       let pathFile = '/images/groups/' + randomValueName.Create(10) + '.png';
-      fs.writeFile('public' + pathFile, req.body.files.image.data, function (
+      fs.writeFileSync('public' + pathFile, req.files.image.data, function (
         err
       ) {
         if (err) {

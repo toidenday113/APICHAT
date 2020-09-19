@@ -145,16 +145,15 @@ module.exports = function (io) {
           _id: req.body.idGroup,
         },
         function (err, group) {
-          if (err) {
+          if (err || !group) {
             logger.error(`error find info group: ${err}`);
+            return res.status(400).end('error edit name group');
           }
           if (group) {
             group.name = req.body.name;
             group.save();
             res.writeHead(200, { 'Content-Type': 'application/json' });
             return res.end(JSON.stringify(group));
-          } else {
-            return res.status(400).end('no find group');
           }
         }
       );

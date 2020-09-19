@@ -135,6 +135,11 @@ try {
 	app.post('/friend/listFriend', isLoggedIn, Friend.ListFriend);
 	/** End Request Friend */
 
+	/** LAST MESSENGER */
+	const LastMessenger = require('./Controllers/LastMessengerController.js');
+	app.get('/lastChat/listMessenger', isLoggedIn, LastMessenger.ListLastMessenger);
+	/** END LAST MESSENGER */
+
 	// Socket IO
 	io.on('connection', socket => {
 		let users = [];

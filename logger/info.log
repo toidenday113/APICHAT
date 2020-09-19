@@ -162,3 +162,44 @@
 [18-09-2020 01:57:34] [[32minfo[39m] Login success: test002
 [18-09-2020 02:07:05] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
 [18-09-2020 02:07:19] [[32minfo[39m] Login success: test002
+[18-09-2020 22:00:13] [[32minfo[39m] Login success: test002
+[18-09-2020 22:24:25] [[32minfo[39m] Login success: test002
+[18-09-2020 22:24:57] [[32minfo[39m] Login success: test002
+[18-09-2020 22:52:18] [[32minfo[39m] Login success: test002
+[18-09-2020 22:58:13] [[32minfo[39m] Login success: test002
+[18-09-2020 23:06:25] [[32minfo[39m] Login success: test002
+[18-09-2020 23:12:17] [[32minfo[39m] Login success: test002
+[19-09-2020 01:09:30] [[32minfo[39m] Login success: test002
+[19-09-2020 01:26:08] [[31merror[39m] Error check file avatar group: TypeError [ERR_INVALID_CALLBACK]: Callback must be a function. Received undefined
+[19-09-2020 23:12:39] [[32minfo[39m] Login success: test002
+[20-09-2020 00:55:35] [[32minfo[39m] Login success: test002
+[20-09-2020 01:02:00] [[32minfo[39m] Login success: test002
+[20-09-2020 01:05:59] [[32minfo[39m] Login success: test002
+[20-09-2020 01:07:50] [[31merror[39m] TryCatch file server.js: Error: Cannot find module './Controllers/LastMessengerController'
+Require stack:
+- D:\Lab_LapTrinh\NodeJs\APICHAT\Controllers\MessengerGroupController.js
+- D:\Lab_LapTrinh\NodeJs\APICHAT\server.js
+[20-09-2020 01:08:01] [[31merror[39m] TryCatch file server.js: Error: Cannot find module './Controllers/LastMessengerController'
+Require stack:
+- D:\Lab_LapTrinh\NodeJs\APICHAT\Controllers\MessengerGroupController.js
+- D:\Lab_LapTrinh\NodeJs\APICHAT\server.js
+[20-09-2020 01:08:40] [[32minfo[39m] Login success: test002
+[20-09-2020 01:12:29] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '('
+[20-09-2020 01:15:28] [[31merror[39m] TryCatch file server.js: Error: Cannot find module 'LastMessengerController'
+Require stack:
+- D:\Lab_LapTrinh\NodeJs\APICHAT\Controllers\MessengerGroupController.js
+- D:\Lab_LapTrinh\NodeJs\APICHAT\server.js
+[20-09-2020 01:15:48] [[32minfo[39m] Login success: test002
+[20-09-2020 01:16:42] [[31merror[39m] TryCatch file server.js: Error: Cannot find module '/LastMessengerController'
+Require stack:
+- D:\Lab_LapTrinh\NodeJs\APICHAT\Controllers\MessengerGroupController.js
+- D:\Lab_LapTrinh\NodeJs\APICHAT\server.js
+[20-09-2020 01:17:10] [[32minfo[39m] Login success: test002
+[20-09-2020 01:20:18] [[32minfo[39m] Login success: test002
+[20-09-2020 01:22:10] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[20-09-2020 01:22:13] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[20-09-2020 01:22:37] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[20-09-2020 01:22:42] [[31merror[39m] TryCatch file server.js: SyntaxError: missing ) after argument list
+[20-09-2020 01:23:00] [[32minfo[39m] Login success: test002
+[20-09-2020 01:24:14] [[32minfo[39m] Login success: test002
+[20-09-2020 01:25:36] [[32minfo[39m] Login success: test002
