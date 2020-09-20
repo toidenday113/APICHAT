@@ -137,7 +137,11 @@ try {
 
 	/** LAST MESSENGER */
 	const LastMessenger = require('./Controllers/LastMessengerController.js');
-	app.get('/lastChat/listMessenger', isLoggedIn, LastMessenger.ListLastMessenger);
+	app.get(
+		'/lastChat/listMessenger',
+		isLoggedIn,
+		LastMessenger.ListLastMessenger
+	);
 	/** END LAST MESSENGER */
 
 	// Socket IO
