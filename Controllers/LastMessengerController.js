@@ -37,12 +37,17 @@ module.exports.CreateLastMessenger = function (
   );
 };
 module.exports.ListLastMessenger = function (req, res) {
-  LastMessenger.find({}, function (err, result) {
-    if (err || !result) {
-      loggers.error(`Error list last messenger: ${err}`);
-      return res.status(400).end('Error list last messenger');
+  LastMessenger.find(
+    {
+      $or: [{ idSender: req.body.idUser }, { idReceiver: req.body.idUser }],
+    },
+    function (err, result) {
+      if (err || !result) {
+        loggers.error(`Error list last messenger: ${err}`);
+        return res.status(400).end('Error list last messenger');
+      }
+      res.writeHead(200, { 'Content-Type': 'application/json' });
+      return res.end(JSON.stringify(result));
     }
-    res.writeHead(200, { 'Content-Type': 'application/json' });
-    return res.end(JSON.stringify(result));
-  });
+  );
 };
