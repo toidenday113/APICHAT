@@ -249,7 +249,7 @@ module.exports.updateStatus = function (req, res) {
 				delete user.password;
 				delete user.__v;
 				res.writeHead(200, { 'Content-Type': 'application/json' });
-				res.end(JSON.stringify(user));
+				return res.end(JSON.stringify(user));
 			}
 		});
 	} catch (error) {}

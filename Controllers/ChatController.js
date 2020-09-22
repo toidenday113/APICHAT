@@ -73,8 +73,9 @@ module.exports = function (admin, io) {
     // List messenger of user
     listChat: function (req, res) {
       try {
-        let perPage = null,
-          page = req.body.page > 0 ? req.body.page : 0;
+        let perPage = 10,
+          page =
+            req.body.page > 0 ? parseInt(req.body.page, 10) * perPage + 1 : 0;
         Chat.find(
           {
             $or: [
