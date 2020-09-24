@@ -4,6 +4,7 @@ const UserToken = require('../Models/UserToken');
 const fs = require('fs');
 const crypto = require('crypto');
 const LastMessenger = require('../Controllers/LastMessengerController');
+const logger = require('../Utils/logger');
 
 module.exports = function (admin, io) {
   return {
@@ -92,6 +93,39 @@ module.exports = function (admin, io) {
         );
       } catch (error) {}
     },
+
+    // Delete All messenger
+    DeleteAll: function (req, res) {
+      Chat.deleteMany(
+        {
+          $or:[
+            { sender: req.body.sender, receiver: req.body.receiver},
+            { sender: req.body.receiver, receiver: req.body.sender}
+          ]
+        },
+        function (err){
+          if(err){
+            logger.error(`Delete messenger error: ${err}`);
+            return res.status(400).end('delete messenger error');
+          }
+        }
+      );
+      return res.status(200).json({ message: 'ok' });
+    },
+    DeleteOne: function (req, res) {
+      Chat.deleteOne(
+        {
+          _id: req.body.id
+        },
+        function (err){
+          if(err){
+            logger.error(`delete one error: ${err}`);
+            return res.status(400).end('delete one error');
+          }
+        }
+      );
+      return res.status(200).json({ message: 'ok' });
+    }
   };
 };
 

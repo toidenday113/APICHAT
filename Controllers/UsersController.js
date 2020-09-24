@@ -168,7 +168,7 @@ module.exports.delete = (req, res) => {
 module.exports.listUser = function (req, res) {
 	User.find(
 		{
-			$or: [{ friend: [] }, { 'friend.status': 'request' }],
+			//$or: [{ friend: [] }, { 'friend.status': 'request' }],
 		},
 		'_id name username email avatar status friend  mGroup',
 		function (err, user) {

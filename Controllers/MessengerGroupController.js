@@ -1,10 +1,12 @@
 const MessengerGroup = require('../Models/MessengerGroup');
+const Group = require('../Models/Group');
+const UserToken = require('../Models/UserToken');
 const logger = require('../Utils/logger');
 const randomValueName = require('../Utils/randomValueName');
 const fs = require('fs');
 const LastMessenger = require('./LastMessengerController');
 
-module.exports = function (io) {
+module.exports = function (io, admin) {
   return {
     //Create messenger text
     CreateText: function (req, res) {
@@ -23,12 +25,14 @@ module.exports = function (io) {
         }
       });
       io.emit('newMessengerGroup', JSON.stringify(messenger));
+      // sendNotificationGroup(admin, req.body.idGroup);
       LastMessenger.CreateLastMessenger(
         req.body.sender,
         req.body.idGroup,
         messenger.content,
         'group'
       );
+      SendNotification(req.body.idGroup, admin, req.body.sender);
       res.writeHead(200, { 'Content-Type': 'application/json' });
       return res.end(JSON.stringify(messenger));
     },
@@ -117,3 +121,55 @@ module.exports = function (io) {
     },
   };
 };
+
+function SendNotification(idGroup, admin, idSender) {
+  Group.findOne(
+    {
+      _id: idGroup,
+    },
+    function (err, group) {
+      if (err || !group) {
+        logger.error(`find group error: ${err}`);
+        return res.status(400).end('find group error');
+      }
+
+      let arrUser = group.mUser;
+      for (var i = 0; i < arrUser.length; i++) {
+        UserToken.findOne(
+          {
+            idUser: arrUser[i].idUser,
+          },
+          function (err, result) {
+            if (err || !result) {
+              logger.error(`Error get token ${err}`);
+              //return res.status(400).end('error get token');
+            }
+            // str = result.tokenNotify;
+            if (result.idUser != idSender) {
+              sendNotificationGroup(admin, idGroup, result.tokenNotify);
+            }
+          }
+        ); // End get Token
+      }
+      //return tokenGroup;
+    }
+  );
+}
+
+function sendNotificationGroup(admin, idGroup, tokenGroup) {
+  const message = {
+    data: {
+      idGroup: idGroup,
+    },
+    token: tokenGroup,
+  };
+  admin
+    .messaging()
+    .send(message)
+    .then(response => {
+      logger.info('send notify success!');
+    })
+    .catch(error => {
+      logger.error('send notify fail');
+    });
+}
