@@ -91,18 +91,18 @@ module.exports = function (io, admin) {
 
     // Cancel apply request friend
     CancelRequestFriend: function (req, res) {
-      if(!req.body.sender || !req.body.receiver){
+      if (!req.body.sender || !req.body.receiver) {
         return res.status(400).end('invalid input');
       }
       // Sender
       User.updateOne(
         {
           _id: req.body.sender,
-          "friend.idUser": req.body.receiver
+          'friend.idUser': req.body.receiver,
         },
-        {$pull:{friend:{ idUser: req.body.receiver}} },
-        function(err, result){
-          if(err){
+        { $pull: { friend: { idUser: req.body.receiver } } },
+        function (err, result) {
+          if (err) {
             logger.error(`error Cancel request friend ${err}`);
             return res.status(400).end('Error cancel request friend');
           }
@@ -110,19 +110,20 @@ module.exports = function (io, admin) {
           User.updateOne(
             {
               _id: req.body.receiver,
-              "friend.idUser": req.body.sender
+              'friend.idUser': req.body.sender,
             },
-            {$pull: {friend: { idUser: req.body.sender } }},
-            function (err, result1){
-              if(err){
+            { $pull: { friend: { idUser: req.body.sender } } },
+            function (err, result1) {
+              if (err) {
                 logger.error(`error Cancel request friend ${err}`);
                 return res.status(400).end('Error cancel request friend');
               }
-              res.status(200).json({ message: 'ok'});
+              io.emit("cancelFriend","cancel");
+              return res.status(200).json({ message: 'ok' });
             }
           ); // End user receiver
         }
-      )// End user sender
+      ); // End user sender
     },
 
     // List friend
@@ -182,9 +183,7 @@ module.exports = function (io, admin) {
         }
       );
     },
-
-  };// End return
-
+  }; // End return
 };
 function sendNotifyRequestFriend(admin, receiver, nameSender) {
   UserToken.findOne(
@@ -207,10 +206,10 @@ function sendNotifyRequestFriend(admin, receiver, nameSender) {
           .messaging()
           .send(message)
           .then(response => {
-            logger.info(`send notification successful`);
+            logger.info(`send notification request friend successful`);
           })
           .catch(error => {
-            logger.error(`send notification error`);
+            logger.error(`send notification request friend error`);
           });
       }
     }

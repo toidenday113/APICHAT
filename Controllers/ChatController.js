@@ -74,9 +74,11 @@ module.exports = function (admin, io) {
     // List messenger of user
     listChat: function (req, res) {
       try {
-        let perPage = 10,
+        let perPage = null,
           page =
-            req.body.page > 0 ? parseInt(req.body.page, 10) * perPage + 1 : 0;
+            parseInt(req.body.page, 10) > 0
+              ? parseInt(req.body.page, 10) * perPage
+              : 0;
         Chat.find(
           {
             $or: [
@@ -87,6 +89,11 @@ module.exports = function (admin, io) {
           {},
           { skip: page, limit: perPage },
           function (err, chat) {
+            if (err) {
+              logger.error(`Error list messenger ${err}`);
+              return res.status(400).end('Error messenger ');
+            }
+
             res.writeHead(200, { 'Content-Type': 'application/json' });
             return res.end(JSON.stringify(chat));
           }
@@ -98,13 +105,13 @@ module.exports = function (admin, io) {
     DeleteAll: function (req, res) {
       Chat.deleteMany(
         {
-          $or:[
-            { sender: req.body.sender, receiver: req.body.receiver},
-            { sender: req.body.receiver, receiver: req.body.sender}
-          ]
+          $or: [
+            { sender: req.body.sender, receiver: req.body.receiver },
+            { sender: req.body.receiver, receiver: req.body.sender },
+          ],
         },
-        function (err){
-          if(err){
+        function (err) {
+          if (err) {
             logger.error(`Delete messenger error: ${err}`);
             return res.status(400).end('delete messenger error');
           }
@@ -115,17 +122,17 @@ module.exports = function (admin, io) {
     DeleteOne: function (req, res) {
       Chat.deleteOne(
         {
-          _id: req.body.id
+          _id: req.body.id,
         },
-        function (err){
-          if(err){
+        function (err) {
+          if (err) {
             logger.error(`delete one error: ${err}`);
             return res.status(400).end('delete one error');
           }
         }
       );
       return res.status(200).json({ message: 'ok' });
-    }
+    },
   };
 };
 
@@ -158,9 +165,8 @@ function SendNotification(req, res, content, admin) {
             },
             function (err, result) {
               const message = {
-                notification: {
-                  title: 'Dev',
-                  body: mContent.receiver,
+                data: {
+                  idUser: mContent.receiver,
                 },
                 token: result.tokenNotify,
               };
