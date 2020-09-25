@@ -5,6 +5,8 @@ const ChatSchema = new mongoose.Schema({
 	receiver: String,
 	content: String,
 	image: String,
+	updatedAt: { type: Date, default: Date.now },
+	createAt: { type: Date, default: Date.now },
 });
 
 module.exports = mongoose.model('Chat', ChatSchema);
