@@ -179,6 +179,7 @@ module.exports = function (io, admin) {
             logger.error(`Error list friend ${err}`);
             return res.status(400).end('Error list Friend');
           }
+          res.writeHead(200, { 'Content-Type': 'application/json' });
           return res.end(JSON.stringify(user));
         }
       );
