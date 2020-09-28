@@ -117,6 +117,8 @@ module.exports = function (admin, io) {
           }
         }
       );
+
+      io.emit('refresh_delete', 'ok');
       return res.status(200).json({ message: 'ok' });
     },
     DeleteOne: function (req, res) {
@@ -131,6 +133,8 @@ module.exports = function (admin, io) {
           }
         }
       );
+
+      io.emit('refresh_delete', 'ok');
       return res.status(200).json({ message: 'ok' });
     },
   };
@@ -158,7 +162,7 @@ function SendNotification(req, res, content, admin) {
     },
     function (err, result) {
       if (!err) {
-        if (result.chatActive == 1 || result.chatActive == 0) {
+        if (result.chatActive == 1) {
           UserToken.findOne(
             {
               idUser: mContent.receiver,
