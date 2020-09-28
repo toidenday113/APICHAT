@@ -38,6 +38,7 @@ module.exports = function (io) {
       );
     }, //End CheckNotification
 
+    //Update augment
     UpdateNotify: function (req, res) {
       if (!req.body.sender || !req.body.receiver || !req.body.chatActive) {
         return res.status(400).end('invalid input');
@@ -52,29 +53,39 @@ module.exports = function (io) {
         },
         function (err, result) {
           if (result) {
-            if (result.chatActive === 2) {
-              result.chatActive = result.chatActive - 1;
-              result.save();
-              return res.end(JSON.stringify(result));
-            }
-
-            if (
-              result.chatActive === 1 &&
-              parseInt(req.body.chatActive, 10) === 0
-            ) {
-              result.chatActive = result.chatActive - 1;
-              result.save();
-              return res.end(JSON.stringify(result));
-            }
-
-            if (result.chatActive === 1 || result.chatActive === 0) {
+            if (result.chatActive < 2) {
               result.chatActive =
-                parseInt(result.chatActive, 10) +
-                parseInt(req.body.chatActive, 10);
+                result.chatActive + parseInt(req.body.chatActive, 10);
               result.save();
-              return res.end(JSON.stringify(result));
             }
           }
+          return res.end(JSON.stringify(result));
+        }
+      );
+    },
+
+    //Update abatement
+    UpdateAbatement: function (req, res) {
+      if (!req.body.sender || !req.body.receiver || !req.body.chatActive) {
+        return res.status(400).end('invalid input');
+      }
+
+      NotificationUser.findOne(
+        {
+          $or: [
+            { sender: req.body.sender, receiver: req.body.receiver },
+            { sender: req.body.receiver, receiver: req.body.sender },
+          ],
+        },
+        function (err, result) {
+          if (result) {
+            if (result.chatActive > 0) {
+              result.chatActive =
+                result.chatActive - parseInt(req.body.chatActive, 10);
+              result.save();
+            }
+          }
+          return res.end(JSON.stringify(result));
         }
       );
     },

@@ -5,6 +5,7 @@ const fs = require('fs');
 const logger = require('../Utils/logger');
 module.exports = function (io) {
   return {
+    
     // Create Group
     CreateGroup: function (req, res) {
       if (!req.body.admin || !req.body.name) {
@@ -36,6 +37,7 @@ module.exports = function (io) {
       io.emit('newGroup', JSON.stringify(mGroup));
       return res.end(JSON.stringify(mGroup));
     },
+    
     // Join User Group
     JoinGroup: function (req, res) {
       if (!req.body.idGroup || !req.body.user) {
@@ -75,6 +77,7 @@ module.exports = function (io) {
         }
       );
     },
+    
     // List Group
     ListGroup: function (req, res) {
       if (!req.body.idUser) {
@@ -93,6 +96,7 @@ module.exports = function (io) {
         }
       );
     },
+    
     // Update Avatar group
     UpdateAvatarGroup: function (req, res) {
       if (!req.body.idGroup) {
@@ -135,6 +139,7 @@ module.exports = function (io) {
         }
       );
     },
+    
     // Update information group
     UpdateNameGroup: function (req, res) {
       if (!req.body.idGroup || !req.body.name) {
@@ -158,6 +163,7 @@ module.exports = function (io) {
         }
       );
     },
+    
     // Delete Group
     DeleteOne: function (req, res) {
       if (!req.body.idGroup || !req.body.admin) {
@@ -177,6 +183,7 @@ module.exports = function (io) {
       );
       return res.status(200).json({ message: 'ok' });
     },
+    
     // User Out group
     OutGroup: function (req, res) {
       if (!req.body.idGroup || !req.body.idUser) {
@@ -202,6 +209,7 @@ module.exports = function (io) {
         }
       );
     },
+    
     // List User member groups
     ListUserMemberGroup: function (req, res) {
       if (!req.body.idGroup) {
@@ -224,6 +232,21 @@ module.exports = function (io) {
         }
       );
     },
+    
+    // Count Group of a User
+    CountGroupUser: function (req, res) {
+      Group.find(
+        {
+          "mUser.idUser": req.params.idGroup
+        }
+      ).countDocuments(function(err, count){
+        if(err){
+          return res.status(400).end("error count group");
+        }
+        return res.status(200).json({ message: count});
+      });
+    }
+
   };
 };
 function randomValueBase64(len) {

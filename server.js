@@ -93,6 +93,11 @@ try {
     isLoggedIn,
     NotifyUserController.UpdateNotify
   );
+  app.post(
+    '/notification/updateAbatement',
+    isLoggedIn,
+    NotifyUserController.UpdateAbatement
+  );
   /** End NotificationUser */
 
   /** Group */
@@ -112,6 +117,11 @@ try {
     '/group/listUseMember',
     isLoggedIn,
     GroupController.ListUserMemberGroup
+  );
+  app.get(
+    '/group/countGroup/:idGroup',
+    isLoggedIn,
+    GroupController.CountGroupUser
   );
   /**End Group */
 

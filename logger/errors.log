@@ -178,3 +178,6 @@ Require stack:
 [23-09-2020 20:35:23] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ':'
 [23-09-2020 20:35:25] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token ':'
 [23-09-2020 20:35:28] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '{'
+[26-09-2020 22:56:41] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '||'
+[26-09-2020 22:57:12] [[31merror[39m] TryCatch file server.js: SyntaxError: Unexpected token '{'
+[26-09-2020 22:57:27] [[31merror[39m] TryCatch file server.js: SyntaxError: Invalid left-hand side in assignment
