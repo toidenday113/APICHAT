@@ -200,6 +200,43 @@ module.exports = function (io, admin) {
 				return res.end(JSON.stringify(user));
 			});
 		},
+		
+		// UnFriend
+		UnFriendUser:function(req, res){
+			if (!req.body.sender || !req.body.receiver) {
+				return res.status(400).end('invalid input');
+			}
+			// Sender
+			User.updateOne(
+				{
+					_id: req.body.sender,
+					'friend.idUser': req.body.receiver,
+				},
+				{ $pull: { friend: { idUser: req.body.receiver } } },
+				function (err, result) {
+					if (err) {
+						logger.error(`error Cancel request friend ${err}`);
+						return res.status(400).end('Error cancel request friend');
+					}
+					// User receiver
+					User.updateOne(
+						{
+							_id: req.body.receiver,
+							'friend.idUser': req.body.sender,
+						},
+						{ $pull: { friend: { idUser: req.body.sender } } },
+						function (err, result1) {
+							if (err) {
+								logger.error(`error Cancel request friend ${err}`);
+								return res.status(400).end('Error cancel request friend');
+							}
+							io.emit('cancelFriend', 'cancel');
+							return res.status(200).json({ message: 'ok' });
+						}
+					); // End user receiver
+				}
+			); // End user sender
+		},
 	}; // End return
 };
 function sendNotifyRequestFriend(admin, receiver, nameSender) {

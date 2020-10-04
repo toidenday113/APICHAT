@@ -47,7 +47,7 @@ app.use(
 		secret: 'dev',
 		resave: true,
 		saveUninitialized: true,
-		store: new MemoryStore({ expires: 60 * 60 * 30 }), // 12 day
+		//store: new MemoryStore({ expires: 60 * 60 * 30 }), // 12 day
 	})
 );
 app.use(Passport.initialize());
@@ -60,15 +60,16 @@ console.clear();
 
 // Config Router
 try {
+	
+
+	require('./Config/ConfigPassport')(Passport);
+	require('./Routers/RouterUser')(app, Passport);
 	function isLoggedIn(req, res, next) {
 		if (req.isAuthenticated()) {
 			return next();
 		}
 		res.end('Not logged in');
 	}
-
-	require('./Config/ConfigPassport')(Passport);
-	require('./Routers/RouterUser')(app, Passport);
 
 	/**  CHAT */
 	const ChatController = require('./Controllers/ChatController')(admin, io);
@@ -160,6 +161,7 @@ try {
 		isLoggedIn,
 		Friend.SearchRequestFriend
 	);
+	app.post('/friend/unfriend', isLoggedIn, Friend.UnFriendUser);
 	/** End Request Friend */
 
 	/** LAST MESSENGER */
@@ -169,6 +171,7 @@ try {
 		isLoggedIn,
 		LastMessenger.ListLastMessenger
 	);
+	app.post('/lastChat/deleteOne', isLoggedIn, LastMessenger.DeleteOneOfUser);
 	/** END LAST MESSENGER */
 
 	// Socket IO

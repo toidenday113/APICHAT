@@ -29,8 +29,8 @@ module.exports = function (admin, io) {
         }
       });
 
+	  io.emit('newMessenger', JSON.stringify(mChat));
       SendNotification(req, res, mChat, admin);
-      io.emit('newMessenger', JSON.stringify(mChat));
       LastMessenger.CreateLastMessenger(
         mChat.sender,
         mChat.receiver,
@@ -65,8 +65,8 @@ module.exports = function (admin, io) {
           return res.json({ message: 'Send not success' });
         }
       });
+	  io.emit('newMessenger', JSON.stringify(mChat));
       SendNotification(req, res, mChat, admin);
-      io.emit('newMessenger', JSON.stringify(mChat));
       res.writeHead(200, { 'Content-Type': 'application/json' });
       return res.end(JSON.stringify(mChat));
     },
@@ -161,7 +161,7 @@ function SendNotification(req, res, content, admin) {
       ],
     },
     function (err, result) {
-      if (!err) {
+      if (!err || !result) {
         if (result.chatActive == 1) {
           UserToken.findOne(
             {

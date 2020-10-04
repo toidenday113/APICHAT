@@ -5,12 +5,7 @@ const logger = require('../Utils/logger');
 
 module.exports = {};
 
-module.exports.CreateLastMessenger = function (
-  sender,
-  receiver,
-  content,
-  status
-) {
+module.exports.CreateLastMessenger = function (sender,  receiver,  content,  status) {
   LastMessenger.findOne(
     {
       $or: [
@@ -37,6 +32,7 @@ module.exports.CreateLastMessenger = function (
     }
   );
 };
+
 module.exports.ListLastMessenger = function (req, res) {
   LastMessenger.find(
     {
@@ -52,3 +48,18 @@ module.exports.ListLastMessenger = function (req, res) {
     }
   );
 };
+module.exports.DeleteOne = function(req, res){
+	LastMessenger.deleteOne(
+		{
+			$or: [{ idSender: req.body.sender, idReceiver: req.body.receiver }, 
+				{ idSender: req.body.receiver, idReceiver: req.body.sender }],
+		},
+		function(err){
+			if(err){
+				loggers.error(`Error delete last messenger: ${err}`);
+				return res.status(400).end('Error delete last messenger');
+			}
+		}
+	);
+	return res.status(200).json({message:"ok"});
+}

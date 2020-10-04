@@ -32,6 +32,9 @@ module.exports = (app, passport) => {
   //Router Logout
   app.post('/logout', (req, res) => {
     req.logout();
+    req.session.destroy((err)=>{
+	
+	});
     return res.json({ message: 'logout' });
   });
 };

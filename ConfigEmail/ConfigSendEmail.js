@@ -2,12 +2,12 @@ const nodemailer = require("nodemailer");
 
 module.exports = {}
 let transporter = nodemailer.createTransport({
-    host: "smtp.gmail.com",
-    port: 465,
-    secure: true, // true for 465, false for other ports
+	host: "smtp.gmail.com",
+ 	port: 587,
+	secure: false,
     auth: {
       user: "toidenday113@gmail.com", // generated ethereal user
-      pass: "Hoangkha007", // generated ethereal password
+      pass: "gwdzslqxrotjmsbw", // generated ethereal password
     },
   });
   module.exports.SendCode = function(email,code){
