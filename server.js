@@ -60,10 +60,9 @@ console.clear();
 
 // Config Router
 try {
-	
-
 	require('./Config/ConfigPassport')(Passport);
 	require('./Routers/RouterUser')(app, Passport);
+
 	function isLoggedIn(req, res, next) {
 		if (req.isAuthenticated()) {
 			return next();
@@ -162,6 +161,7 @@ try {
 		Friend.SearchRequestFriend
 	);
 	app.post('/friend/unfriend', isLoggedIn, Friend.UnFriendUser);
+	app.post('/friend/OnlineOffline', Friend.FriendStatusOnlineOffline);
 	/** End Request Friend */
 
 	/** LAST MESSENGER */

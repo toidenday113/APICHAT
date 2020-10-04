@@ -237,6 +237,25 @@ module.exports = function (io, admin) {
 				}
 			); // End user sender
 		},
+
+		// Friend status Online or Offline
+		FriendStatusOnlineOffline: function (req, res) {
+			try {
+				User.findById(req.user.id, (err, user) => {
+					if (user) {
+						user.status = (req.body.status =="online") ? req.body.status : 'offline';
+						user.save();
+						user = user.toObject();
+						delete user.password;
+						delete user.__v;
+						//res.writeHead(200, { 'Content-Type': 'application/json' });
+						UserOnlineOffline(req.user.id, io);
+						return res.end(JSON.stringify(user));
+					}
+				});
+			} catch (error) {}
+		}
+
 	}; // End return
 };
 function sendNotifyRequestFriend(admin, receiver, nameSender) {
@@ -266,6 +285,25 @@ function sendNotifyRequestFriend(admin, receiver, nameSender) {
 						logger.error(`send notification request friend error`);
 					});
 			}
+		}
+	);
+}
+
+function UserOnlineOffline(idUser, io){
+	User.find(
+		{
+			friend: {
+				$elemMatch: { idUser: idUser, status: 'ok' },
+			},
+		},
+		function (err, user) {
+			if (err || !user) {
+				logger.error(`Error list friend ${err}`);
+				return res.status(400).end('Error list Friend');
+			}
+			//res.writeHead(200, { 'Content-Type': 'application/json' });
+			//return res.end(JSON.stringify(user));
+			io.emit("User_Online_Offline",JSON.stringify(user))
 		}
 	);
 }
