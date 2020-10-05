@@ -200,9 +200,9 @@ module.exports = function (io, admin) {
 				return res.end(JSON.stringify(user));
 			});
 		},
-		
+
 		// UnFriend
-		UnFriendUser:function(req, res){
+		UnFriendUser: function (req, res) {
 			if (!req.body.sender || !req.body.receiver) {
 				return res.status(400).end('invalid input');
 			}
@@ -243,7 +243,8 @@ module.exports = function (io, admin) {
 			try {
 				User.findById(req.user.id, (err, user) => {
 					if (user) {
-						user.status = (req.body.status =="online") ? req.body.status : 'offline';
+						user.status =
+							req.body.status == 'online' ? req.body.status : 'offline';
 						user.save();
 						user = user.toObject();
 						delete user.password;
@@ -254,8 +255,7 @@ module.exports = function (io, admin) {
 					}
 				});
 			} catch (error) {}
-		}
-
+		},
 	}; // End return
 };
 function sendNotifyRequestFriend(admin, receiver, nameSender) {
@@ -289,7 +289,7 @@ function sendNotifyRequestFriend(admin, receiver, nameSender) {
 	);
 }
 
-function UserOnlineOffline(idUser, io){
+function UserOnlineOffline(idUser, io) {
 	User.find(
 		{
 			friend: {
@@ -303,7 +303,8 @@ function UserOnlineOffline(idUser, io){
 			}
 			//res.writeHead(200, { 'Content-Type': 'application/json' });
 			//return res.end(JSON.stringify(user));
-			io.emit("User_Online_Offline",JSON.stringify(user))
+			io.emit('User_Online_Offline', JSON.stringify(user));
+			return;
 		}
 	);
 }

@@ -5,7 +5,6 @@ const fs = require('fs');
 const logger = require('../Utils/logger');
 module.exports = function (io) {
   return {
-    
     // Create Group
     CreateGroup: function (req, res) {
       if (!req.body.admin || !req.body.name) {
@@ -37,7 +36,7 @@ module.exports = function (io) {
       io.emit('newGroup', JSON.stringify(mGroup));
       return res.end(JSON.stringify(mGroup));
     },
-    
+
     // Join User Group
     JoinGroup: function (req, res) {
       if (!req.body.idGroup || !req.body.user) {
@@ -77,7 +76,7 @@ module.exports = function (io) {
         }
       );
     },
-    
+
     // List Group
     ListGroup: function (req, res) {
       if (!req.body.idUser) {
@@ -96,7 +95,7 @@ module.exports = function (io) {
         }
       );
     },
-    
+
     // Update Avatar group
     UpdateAvatarGroup: function (req, res) {
       if (!req.body.idGroup) {
@@ -139,7 +138,7 @@ module.exports = function (io) {
         }
       );
     },
-    
+
     // Update information group
     UpdateNameGroup: function (req, res) {
       if (!req.body.idGroup || !req.body.name) {
@@ -163,16 +162,15 @@ module.exports = function (io) {
         }
       );
     },
-    
+
     // Delete Group
     DeleteOne: function (req, res) {
-      if (!req.body.idGroup || !req.body.admin) {
+      if (!req.body.idGroup) {
         return res.status(400).end('invalid input');
       }
-      Group.DeleteOne(
+      Group.deleteOne(
         {
           _id: req.body.idGroup,
-          admin: req.body.admin,
         },
         function (err) {
           if (err) {
@@ -181,9 +179,20 @@ module.exports = function (io) {
           }
         }
       );
+      User.updateMany(
+        {
+          'mGroup.idGroup': req.body.idGroup,
+        },
+        { $pull: { mGroup: { idGroup: req.body.idGroup } } },
+        function (err, user) {
+          if (err || !user) {
+            return res.status(400).end('error delete user out group');
+          }
+        }
+      );
       return res.status(200).json({ message: 'ok' });
     },
-    
+
     // User Out group
     OutGroup: function (req, res) {
       if (!req.body.idGroup || !req.body.idUser) {
@@ -204,12 +213,23 @@ module.exports = function (io) {
             return res.status(400).end('Not found Info group');
           }
           if (group) {
-            return res.status(200).json({ message: 'ok' });
+            User.updateOne(
+              {
+                _id: req.body.idUser,
+              },
+              { $pull: { mGroup: { idGroup: req.body.idGroup } } },
+              function (err, user) {
+                if (err || !user) {
+                  return res.status(400).end('Out group fail');
+                }
+                return res.status(200).json({ message: 'ok' });
+              }
+            ); // End user
           }
         }
-      );
+      ); // End Group
     },
-    
+
     // List User member groups
     ListUserMemberGroup: function (req, res) {
       if (!req.body.idGroup) {
@@ -232,21 +252,18 @@ module.exports = function (io) {
         }
       );
     },
-    
+
     // Count Group of a User
     CountGroupUser: function (req, res) {
-      Group.find(
-        {
-          "mUser.idUser": req.params.idGroup
+      Group.find({
+        'mUser.idUser': req.params.idGroup,
+      }).countDocuments(function (err, count) {
+        if (err) {
+          return res.status(400).end('error count group');
         }
-      ).countDocuments(function(err, count){
-        if(err){
-          return res.status(400).end("error count group");
-        }
-        return res.status(200).json({ message: count});
+        return res.status(200).json({ message: count });
       });
-    }
-
+    },
   };
 };
 function randomValueBase64(len) {

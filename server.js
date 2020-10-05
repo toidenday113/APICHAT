@@ -59,134 +59,121 @@ console.clear();
 /**END USE */
 
 // Config Router
-try {
-	require('./Config/ConfigPassport')(Passport);
-	require('./Routers/RouterUser')(app, Passport);
-
-	function isLoggedIn(req, res, next) {
-		if (req.isAuthenticated()) {
-			return next();
-		}
-		res.end('Not logged in');
-	}
-
-	/**  CHAT */
-	const ChatController = require('./Controllers/ChatController')(admin, io);
-	app.post('/chat/chatChar', isLoggedIn, ChatController.createChatChar);
-	app.post('/chat/listChat', isLoggedIn, ChatController.listChat);
-	app.post('/chat/chatImage', isLoggedIn, ChatController.createChatImage);
-	app.post('/chat/DeleteAll', isLoggedIn, ChatController.DeleteAll);
-	app.post('/chat/DeleteOne', isLoggedIn, ChatController.DeleteOne);
-	/** END CHAT*/
-
-	/**Check NotificationUser */
-	const NotifyUserController = require('./Controllers/NotificationUserController')(
-		io
-	);
-	app.post(
-		'/notification/check',
-		isLoggedIn,
-		NotifyUserController.CheckNotification
-	);
-	app.post(
-		'/notification/updateNotify',
-		isLoggedIn,
-		NotifyUserController.UpdateNotify
-	);
-	app.post(
-		'/notification/updateAbatement',
-		isLoggedIn,
-		NotifyUserController.UpdateAbatement
-	);
-	/** End NotificationUser */
-
-	/** Group */
-	const GroupController = require('./Controllers/GroupController')(io);
-	app.post('/group/CreateGroup', isLoggedIn, GroupController.CreateGroup);
-	app.post('/group/joinGroup', isLoggedIn, GroupController.JoinGroup);
-	app.post('/group/list', isLoggedIn, GroupController.ListGroup);
-	app.post(
-		'/group/updateAvatar',
-		isLoggedIn,
-		GroupController.UpdateAvatarGroup
-	);
-	app.post('/group/updateName', isLoggedIn, GroupController.UpdateNameGroup);
-	app.post('/group/deleteGroup', isLoggedIn, GroupController.DeleteOne);
-	app.post('/group/outGroup', isLoggedIn, GroupController.OutGroup);
-	app.post(
-		'/group/listUseMember',
-		isLoggedIn,
-		GroupController.ListUserMemberGroup
-	);
-	app.get(
-		'/group/countGroup/:idGroup',
-		isLoggedIn,
-		GroupController.CountGroupUser
-	);
-	/**End Group */
-
-	/** MESSENGER GROUP */
-	const MessengerGroup = require('./Controllers/MessengerGroupController')(
-		io,
-		admin
-	);
-	app.post('/messengerGroup/list', isLoggedIn, MessengerGroup.ListMessenger);
-	app.post('/messengerGroup/chatText', isLoggedIn, MessengerGroup.CreateText);
-	app.post('/messengerGroup/chatImage', isLoggedIn, MessengerGroup.CreateImage);
-	app.post('/messengerGroup/deleteAll', isLoggedIn, MessengerGroup.DeleteAll);
-	app.post('/messengerGroup/deleteOne', isLoggedIn, MessengerGroup.DeleteOne);
-	/** END  */
-
-	/**Add Token Notification */
-	const UserTokenController = require('./Controllers/UserTokenController');
-	app.post('/notification/addToken', isLoggedIn, UserTokenController.AddToken);
-	//logger.error("loi notification");
-	/**End Add Token */
-
-	/** Request Friend */
-	const Friend = require('./Controllers/FriendController')(io, admin);
-	app.post('/friend/requestFriend', isLoggedIn, Friend.requestFriend);
-	app.post('/friend/applyFriend', isLoggedIn, Friend.ApplyFriend);
-	app.post(
-		'/friend/cancelRequestFriend',
-		isLoggedIn,
-		Friend.CancelRequestFriend
-	);
-	app.post('/friend/listRequestFriend', isLoggedIn, Friend.ListRequestFriend);
-	app.post('/friend/listFriend', isLoggedIn, Friend.ListFriend);
-	app.post('/friend/countRequestFriend', isLoggedIn, Friend.CountRequestFriend);
-	app.get(
-		'/friend/searchFriend/:search',
-		isLoggedIn,
-		Friend.SearchRequestFriend
-	);
-	app.post('/friend/unfriend', isLoggedIn, Friend.UnFriendUser);
-	app.post('/friend/OnlineOffline', Friend.FriendStatusOnlineOffline);
-	/** End Request Friend */
-
-	/** LAST MESSENGER */
-	const LastMessenger = require('./Controllers/LastMessengerController.js');
-	app.post(
-		'/lastChat/listMessenger',
-		isLoggedIn,
-		LastMessenger.ListLastMessenger
-	);
-	app.post('/lastChat/deleteOne', isLoggedIn, LastMessenger.DeleteOneOfUser);
-	/** END LAST MESSENGER */
-
-	// Socket IO
-	io.on('connection', socket => {
-		let users = [];
-
-		console.log(`user connection: ${socket.id}`);
-		socket.on('user_connect', username => {
-			users[username] = socket.id;
-			console.log(users);
-		});
+//try {
+// Socket IO
+io.on('connection', socket => {
+	let users = [];
+	console.log(`user connection: ${socket.id}`);
+	socket.on('user_connect', username => {
+		users[username] = socket.id;
+		console.log(users);
 	});
-} catch (error) {
-	logger.error(`TryCatch file server.js: ${error}`);
+});
+
+require('./Config/ConfigPassport')(Passport);
+require('./Routers/RouterUser')(app, Passport);
+
+function isLoggedIn(req, res, next) {
+	if (req.isAuthenticated()) {
+		return next();
+	}
+	res.end('Not logged in');
 }
+
+/**  CHAT */
+const ChatController = require('./Controllers/ChatController')(admin, io);
+app.post('/chat/chatChar', isLoggedIn, ChatController.createChatChar);
+app.post('/chat/listChat', isLoggedIn, ChatController.listChat);
+app.post('/chat/chatImage', isLoggedIn, ChatController.createChatImage);
+app.post('/chat/DeleteAll', isLoggedIn, ChatController.DeleteAll);
+app.post('/chat/DeleteOne', isLoggedIn, ChatController.DeleteOne);
+/** END CHAT*/
+
+/**Check NotificationUser */
+const NotifyUserController = require('./Controllers/NotificationUserController')(
+	io
+);
+app.post(
+	'/notification/check',
+	isLoggedIn,
+	NotifyUserController.CheckNotification
+);
+app.post(
+	'/notification/updateNotify',
+	isLoggedIn,
+	NotifyUserController.UpdateNotify
+);
+app.post(
+	'/notification/updateAbatement',
+	isLoggedIn,
+	NotifyUserController.UpdateAbatement
+);
+/** End NotificationUser */
+
+/** Group */
+const GroupController = require('./Controllers/GroupController')(io);
+app.post('/group/CreateGroup', isLoggedIn, GroupController.CreateGroup);
+app.post('/group/joinGroup', isLoggedIn, GroupController.JoinGroup);
+app.post('/group/list', isLoggedIn, GroupController.ListGroup);
+app.post('/group/updateAvatar', isLoggedIn, GroupController.UpdateAvatarGroup);
+app.post('/group/updateName', isLoggedIn, GroupController.UpdateNameGroup);
+app.post('/group/deleteGroup', isLoggedIn, GroupController.DeleteOne);
+app.post('/group/outGroup', isLoggedIn, GroupController.OutGroup);
+app.post(
+	'/group/listUseMember',
+	isLoggedIn,
+	GroupController.ListUserMemberGroup
+);
+app.get(
+	'/group/countGroup/:idGroup',
+	isLoggedIn,
+	GroupController.CountGroupUser
+);
+/**End Group */
+
+/** MESSENGER GROUP */
+const MessengerGroup = require('./Controllers/MessengerGroupController')(
+	io,
+	admin
+);
+app.post('/messengerGroup/list', isLoggedIn, MessengerGroup.ListMessenger);
+app.post('/messengerGroup/chatText', isLoggedIn, MessengerGroup.CreateText);
+app.post('/messengerGroup/chatImage', isLoggedIn, MessengerGroup.CreateImage);
+app.post('/messengerGroup/deleteAll', isLoggedIn, MessengerGroup.DeleteAll);
+app.post('/messengerGroup/deleteOne', isLoggedIn, MessengerGroup.DeleteOne);
+/** END  */
+
+/**Add Token Notification */
+const UserTokenController = require('./Controllers/UserTokenController');
+app.post('/notification/addToken', isLoggedIn, UserTokenController.AddToken);
+//logger.error("loi notification");
+/**End Add Token */
+
+/** Request Friend */
+const Friend = require('./Controllers/FriendController')(io, admin);
+app.post('/friend/requestFriend', isLoggedIn, Friend.requestFriend);
+app.post('/friend/applyFriend', isLoggedIn, Friend.ApplyFriend);
+app.post('/friend/cancelRequestFriend', isLoggedIn, Friend.CancelRequestFriend);
+app.post('/friend/listRequestFriend', isLoggedIn, Friend.ListRequestFriend);
+app.post('/friend/listFriend', isLoggedIn, Friend.ListFriend);
+app.post('/friend/countRequestFriend', isLoggedIn, Friend.CountRequestFriend);
+app.get('/friend/searchFriend/:search', isLoggedIn, Friend.SearchRequestFriend);
+app.post('/friend/unfriend', isLoggedIn, Friend.UnFriendUser);
+app.post('/friend/OnlineOffline', isLoggedIn, Friend.FriendStatusOnlineOffline);
+/** End Request Friend */
+
+/** LAST MESSENGER */
+const LastMessenger = require('./Controllers/LastMessengerController.js');
+app.post(
+	'/lastChat/listMessenger',
+	isLoggedIn,
+	LastMessenger.ListLastMessenger
+);
+app.post('/lastChat/deleteOne', isLoggedIn, LastMessenger.DeleteOne);
+/** END LAST MESSENGER */
+// } catch (error) {
+//   logger.error(`TryCatch file server.js: ${error}`);
+// }
 
 // run server
 server.listen(PORT, function () {
