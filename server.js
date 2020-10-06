@@ -68,6 +68,9 @@ io.on('connection', socket => {
 		users[username] = socket.id;
 		console.log(users);
 	});
+	socket.on('disconnect', function () {
+		console.log(`disconnect user: ${socket.id}`);
+	});
 });
 
 require('./Config/ConfigPassport')(Passport);
