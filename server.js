@@ -60,18 +60,6 @@ console.clear();
 
 // Config Router
 //try {
-// Socket IO
-io.on('connection', socket => {
-	let users = [];
-	console.log(`user connection: ${socket.id}`);
-	socket.on('user_connect', username => {
-		users[username] = socket.id;
-		console.log(users);
-	});
-	socket.on('disconnect', function () {
-		console.log(`disconnect user: ${socket.id}`);
-	});
-});
 
 require('./Config/ConfigPassport')(Passport);
 require('./Routers/RouterUser')(app, Passport);
@@ -174,6 +162,20 @@ app.post(
 );
 app.post('/lastChat/deleteOne', isLoggedIn, LastMessenger.DeleteOne);
 /** END LAST MESSENGER */
+
+// Socket IO
+io.on('connection', socket => {
+	let users = [];
+	console.log(`user connection: ${socket.id}`);
+	socket.on('user_connect', username => {
+		users[username] = socket.id;
+		console.log(users);
+	});
+	socket.on('disconnect', function () {
+		console.log(`disconnect user: ${socket.id}`);
+	});
+});
+
 // } catch (error) {
 //   logger.error(`TryCatch file server.js: ${error}`);
 // }
